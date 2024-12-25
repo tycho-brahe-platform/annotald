@@ -41,4 +41,4 @@ validators = {}
 # }
 
 # TODO: document
-serverMode = True
+serverMode = False

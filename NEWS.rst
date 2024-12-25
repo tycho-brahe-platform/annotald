@@ -1,6 +1,12 @@
 News
 ====
 
+Release 1.3.11
+--------------
+
+- This release adds a favicon and improves UI controls to exit the program.
+- ServerMode is set to false.
+
 Release 1.3.10
 --------------
 

@@ -840,7 +840,7 @@ class TreeView(object):
         self._layout()
 
     def destroy(self, *e):
-        if self._top is None: return
+        if self._top is None: return        
         self._top.destroy()
         self._top = None
 

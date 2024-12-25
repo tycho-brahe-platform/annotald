@@ -31,6 +31,7 @@ import runpy
 import sys
 import time
 import traceback
+import threading
 
 # Part of the standard library as of 2.7
 import argparse
@@ -77,7 +78,7 @@ class Treedraw(object):
                               'corpusSearchValidate':
                               util.corpusSearchValidate,
                               'rewriteIndices': True,
-                              'serverMode': True}
+                              'serverMode': False}
         if args.pythonSettings is not None:
             if sys.version_info[0] == 2 and sys.version_info[1] < 7 or \
                sys.version_info[0] == 3 and sys.version_info[1] < 2:
@@ -233,9 +234,27 @@ class Treedraw(object):
         if self.eventLog:
             self.eventLog.close()
             self.eventLog = None
+
+        # Send response before exiting
+        cherrypy.response.headers['Content-Type'] = 'application/json'
+        response = json.dumps({'status': 'success', 'message': 'Server is exiting'})
+                    
         # forceful exit to make up for lack of proper thread management
-        os._exit(0)
+        # os._exit(0)
         #raise SystemExit(0)
+
+        # Schedule server shutdown in a separate thread
+        shutdown_thread = threading.Thread(target=self.shutdown_server)
+        shutdown_thread.setDaemon(True)  # Set the thread as a daemon manually
+        shutdown_thread.start()
+        
+        return response
+
+    def shutdown_server(self):
+        """Shuts down the CherryPy server after a short delay to allow response completion."""
+        time.sleep(1)  # Give the client time to receive the response
+        cherrypy.engine.exit()
+        os._exit(0)  # Force termination to ensure no lingering threads
 
     @cherrypy.expose
     def test(self):
@@ -458,6 +477,7 @@ def _main(argv):
     shortfile = re.search("^.*?([0-9A-Za-z\-\.]*)$", args.psd[0]).group(1)
 
     cherrypy.config.update({'server.socket_port': args.port})
+    cherrypy.config.update({'server.socket_host': '0.0.0.0'})
 
     treedraw = Treedraw(args, shortfile)
     cherrypy.quickstart(treedraw)

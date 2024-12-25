@@ -9,6 +9,7 @@ any later version.  See the LICENSE file for more information. -->
 <html>
   <head>
     <title>Annotald</title>
+    <link rel="icon" href="/images/annotald.ico" type="image/x-icon">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="css/treedrawing.css" />
 %if colorCSS:
@@ -66,7 +67,9 @@ any later version.  See the LICENSE file for more information. -->
         <input class="menubutton" type="button" value="Run Tests"
         id="buttests" /><br />
 %endif
-        <input class="menubutton" type="button" value="Exit" id="butexit" /><br />
+        <input class="menubutton" type="button" value="Exit" id="butexit" />
+        <div class="spinner" id="loading-spinner"></div>
+        <br />
       </div>
 
       <div id="toolsMenu" class="menuPane">
