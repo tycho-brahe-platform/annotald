@@ -22,20 +22,19 @@ Obtaining Annotald
 
 The central location for Annotald development is `on Github`_.  You can
 view or download the program's source code from there.  The latest
-release is available as a `Python package`_.  Install it with the
+release is available as a `Docker image`_.  Install it with the
 command ``pip install annotald`` .  (Further information about
-installation is available in the user’s manual.)
+installation is available in the user's manual.)
 
 .. _on Github: https://github.com/Annotald/annotald
-.. _Python package: https://pypi.python.org/pypi/annotald
 
 Using Annotald
 --------------
 
-The `Annotald user’s manual`_ can be found online.  For developers,
+The `Annotald user's manual`_ can be found online.  For developers,
 there is also `automatically generated API documentation`_.
 
-.. _Annotald user’s manual: http://annotald.github.com/user.html
+.. _Annotald user's manual: http://annotald.github.com/user.html
 .. _automatically generated API documentation:
     http://annotald.github.com/api-doc/global.html
 
@@ -51,8 +50,8 @@ Funding Sources
 
 Annotald development has been funded by the following funding sources:
 
-- Icelandic Research Fund (RANNÍS), grant #090662011: “Viable Language
-  Technology beyond English – Icelandic as a Test Case”
+- Icelandic Research Fund (RANNÍS), grant #090662011: "Viable Language
+  Technology beyond English - Icelandic as a Test Case”
 - The research funds of `Anthony Kroch`_ at the University of
   Pennsylvania.
 

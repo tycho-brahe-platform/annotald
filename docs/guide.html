@@ -1,0 +1,3634 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Annotald User's Guide</title>
+    <link rel="stylesheet" type="text/css" href="css/docbook-xsl.css" />
+    <link rel="stylesheet" type="text/css" href="css/annotald-manual.css" />
+  </head>
+  <body>
+    <div xml:lang="en" class="article" lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title">
+              <a id="idm45697246856496"></a>Annotald User's Guide
+            </h2>
+          </div>
+          <div>
+            <div class="legalnotice">
+              <a id="idm45697246983088"></a>
+              <p>
+                This work is licensed under a Creative Commons
+                Attribution-NonCommercial-NoDerivs 3.0 Unported License
+                http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="toc">
+        <p><strong>Table of Contents</strong></p>
+        <dl class="toc">
+          <dt>
+            <span class="section"><a href="#_authors">0. Authors</a></span>
+          </dt>
+          <dt>
+            <span class="section"
+              ><a href="#_introduction">1. Introduction</a></span
+            >
+          </dt>
+          <dt>
+            <span class="section"
+              ><a href="#_installation">2. Installation</a></span
+            >
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section"
+                  ><a href="#_installing_windows"
+                    >2.1. Windows Installation</a
+                  ></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#_installing_macos"
+                    >2.2. Mac OS Installation</a
+                  ></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#_installing_linux"
+                    >2.3. Linux Installation</a
+                  ></span
+                >
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="section"
+              ><a href="#_annotald_ui_and_philosophy"
+                >3. Annotald UI and Philosophy</a
+              ></span
+            >
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section"><a href="#_mouse">3.1. Mouse</a></span>
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#_context_menu">3.2. Context menu</a></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#_keyboard">3.3. Keyboard</a></span
+                >
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="section"
+              ><a href="#_customization">4. Customization</a></span
+            >
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section"
+                  ><a href="#cmdline-opts">4.1. Command line options</a></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#_settings_files">4.2. Settings files</a></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#keycmds">4.3. Default keybindings</a></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#customkeys">4.4. Custom keybindings</a></span
+                >
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="section"
+              ><a href="#_additional_features">5. Additional features</a></span
+            >
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section"
+                  ><a href="#limiteddisplay">5.1. Limited display</a></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#timelog">5.2. Event log</a></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#casemenu">5.3. Case menu</a></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#search">5.4. Searching</a></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#collapsing-nodes">5.5. Collapsing nodes</a></span
+                >
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="section"
+              ><a href="#advanced-features">6. Advanced features</a></span
+            >
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section"
+                  ><a href="#tagset-validate">6.1. Tagset validation</a></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#externalvalidation"
+                    >6.2. External validation</a
+                  ></span
+                >
+              </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#customjs">6.3. Custom Javascript</a></span
+                >
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="section"
+              ><a href="#_auxiliary_commands">7. Auxiliary commands</a></span
+            >
+          </dt>
+          <dt>
+            <span class="appendix"
+              ><a href="#_annotald_file_format"
+                >A. Annotald file format</a
+              ></span
+            >
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section"
+                  ><a
+                    href="#_mapping_from_source_document_to_corpus_representation"
+                    >A.1. Mapping from source document to corpus
+                    representation</a
+                  ></span
+                >
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="section">
+        <div class="titlepage">
+          <h2 class="title" style="clear: both">
+            <a id="_authors"></a>0. Authors
+          </h2>
+        </div>
+        <div class="authorgroup">
+          <div class="author">
+            <h3 class="author">
+              <span class="firstname">Aaron</span>
+              <span class="surname">Ecay</span>
+            </h3>
+            <code class="email"
+              >&lt;<a class="email" href="mailto:ecay@babel.ling.upenn.edu"
+                >ecay@babel.ling.upenn.edu</a
+              >&gt;</code
+            >
+          </div>
+
+          <p>
+            The original manual was created by Aaron Ecay in 2012 and
+            corresponds to version 1.3.10 of Annotald. It includes a description
+            of the application, its usage, and features.
+          </p>
+        </div>
+
+        <div class="authorgroup">
+          <div class="author">
+            <h3 class="author">
+              <span class="firstname">Luiz</span>
+              <span class="surname">Veronesi</span>
+            </h3>
+            <code class="email"
+              >&lt;<a class="email" href="mailto:ecay@babel.ling.upenn.edu"
+                >luiz.veronesi@outlook.com</a
+              >&gt;</code
+            >
+          </div>
+          <p>
+            The manual was updated by Luiz Veronesi in 2024 to reflect version
+            1.3.11 of Annotald. This update includes new installation processes
+            based on the application's support for the Docker Engine.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both">
+                <a id="_introduction"></a>1. Introduction
+              </h2>
+            </div>
+          </div>
+        </div>
+        <p>
+          This manual is designed to teach users how to use the Annotald program
+          for annotating parsed corpora according to (a version of) the Penn
+          treebank standards. This version of the manual accompanies version
+          <span class="strong"><strong>1.3.11</strong></span> of Annotald.
+        </p>
+        <p>
+          Annotald was originally written as part of the
+          <a
+            class="ulink"
+            href="http://www.linguist.is/icelandic_treebank/Icelandic_Parsed_Historical_Corpus_%28IcePaHC%29"
+            target="_top"
+            >Icelandic Parsed Historical Corpus</a
+          >
+          (IcePaHC) project. Development of the program has been funded by:
+        </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc">
+            <li class="listitem">The Icelandic Research Fund (RANNÍS)</li>
+            <li class="listitem">The US's National Science Foundation</li>
+            <li class="listitem">The University of Iceland Research Fund</li>
+            <li class="listitem">
+              Research funds at the University of Pennsylvania
+            </li>
+          </ul>
+        </div>
+        <p>
+          Annotald is under active development. If you would like to be on a
+          mailing list to receive announcements of new releases, please contact
+          <a class="ulink" href="mailto:ecay@sas.upenn.edu" target="_top"
+            >Aaron Ecay</a
+          >
+        </p>
+        <p>
+          The updated version that made Annotald portable to Docker was
+          developed as part of the project 'La Teoria Parametrica Testata Sui
+          Corpora Storici: Misurazione Del Potere Esplicativo E Predittivo Della
+          Teoria Dei Parametri Sui Corpora Storici,' within the Department of
+          Literary Studies and Linguistics at the University of Padova. This
+          project was funded by:
+        </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc">
+            <li class="listitem">
+              Fondo per il Programma Nazionale di Ricerca e Progetti di
+              Rilevante Interesse Nazionale (PRIN)
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both">
+                <a id="_installation"></a>2. Installation
+              </h2>
+            </div>
+          </div>
+        </div>
+        <p>
+          In order to use Annotald, it is necessary to install the Docker
+          Desktop that Annotald depends on in order to function. Like Annotald
+          itself, all of these programs are Free Software.<a
+            href="#ftn.idm45697242942048"
+            class="footnote"
+            id="idm45697242942048"
+            ><sup class="footnote">[1]</sup></a
+          >
+        </p>
+
+        <div class="section">
+          <div class="titlepage">
+            <h3 class="title">
+              <a id="_installing_windows"></a>2.1. Windows Installation
+            </h3>
+          </div>
+          <p>These are the instructions to install Annotald on Windows:</p>
+          <div class="orderedlist">
+            <ol class="orderedlist" type="1">
+              <li class="listitem">
+                Download and install the latest stable version for Windows of
+                <a
+                  class="ulink"
+                  href="https://www.docker.com/products/docker-desktop/"
+                  target="_top"
+                  >Docker Desktop</a
+                >
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  Download the zip file (or the contents of the folder)
+                  containing the installation and executable running files at
+                  <a
+                    class="ulink"
+                    href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/windows"
+                    target="_top"
+                    >Github</a
+                  >.
+                </p>
+              </li>
+
+              <li class="listitem">
+                <p class="simpara">
+                  Double click the file install.bat. It will pull Annotald's
+                  Docker image from Docker Hub Server.
+                </p>
+              </li>
+
+              <li class="listitem">
+                <p class="simpara">
+                  Double click the file annotald.bat to run. It will open a
+                  dialog box to inform the file you want to edit. Your default
+                  web browser will automatically open.
+                </p>
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  You can also run Annotald in command line by running the
+                  command:
+                </p>
+                <pre class="screen">
+                  annotald-cli.bat "path-to-folder" "filename.psd"
+                  </pre
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <h3 class="title">
+              <a id="_installing_macos"></a>2.2. Mac OS Installation
+            </h3>
+          </div>
+          <p>These are the instructions to install Annotald on Windows:</p>
+          <div class="orderedlist">
+            <ol class="orderedlist" type="1">
+              <li class="listitem">
+                Download and install the latest stable version for Windows of
+                <a
+                  class="ulink"
+                  href="https://www.docker.com/products/docker-desktop/"
+                  target="_top"
+                  >Docker Desktop</a
+                >
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  Download the zip file (or the contents of the folder)
+                  containing the installation and executable running files at
+                  <a
+                    class="ulink"
+                    href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/windows"
+                    target="_top"
+                    >Github</a
+                  >.
+                </p>
+              </li>
+
+              <li class="listitem">
+                <p class="simpara">
+                  Double click the file install.bat. It will pull Annotald's
+                  Docker image from Docker Hub Server.
+                </p>
+              </li>
+
+              <li class="listitem">
+                <p class="simpara">
+                  Double click the file annotald.bat to run. It will open a
+                  dialog box to inform the file you want to edit. Your default
+                  web browser will automatically open.
+                </p>
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  You can also run Annotald in command line by running the
+                  command:
+                </p>
+                <pre class="screen">
+                  annotald-cli.bat "path-to-folder" "filename.psd"
+                  </pre
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <h3 class="title">
+              <a id="_installing_linux"></a>2.3. Linux Installation
+            </h3>
+          </div>
+          <p>These are the instructions to install Annotald on Windows:</p>
+          <div class="orderedlist">
+            <ol class="orderedlist" type="1">
+              <li class="listitem">
+                Download and install the latest stable version for Windows of
+                <a
+                  class="ulink"
+                  href="https://www.docker.com/products/docker-desktop/"
+                  target="_top"
+                  >Docker Desktop</a
+                >
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  Download the zip file (or the contents of the folder)
+                  containing the installation and executable running files at
+                  <a
+                    class="ulink"
+                    href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/windows"
+                    target="_top"
+                    >Github</a
+                  >.
+                </p>
+              </li>
+
+              <li class="listitem">
+                <p class="simpara">
+                  Double click the file install.bat. It will pull Annotald's
+                  Docker image from Docker Hub Server.
+                </p>
+              </li>
+
+              <li class="listitem">
+                <p class="simpara">
+                  Double click the file annotald.bat to run. It will open a
+                  dialog box to inform the file you want to edit. Your default
+                  web browser will automatically open.
+                </p>
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  You can also run Annotald in command line by running the
+                  command:
+                </p>
+                <pre class="screen">
+                  annotald-cli.bat "path-to-folder" "filename.psd"
+                  </pre
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="note" style="margin-left: 0; margin-right: 10%">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/icons/note.png" />
+              </td>
+              <th align="left"></th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+                  If you are not able to install Annotald successfully, you can
+                  open an issue report at
+                  <a
+                    class="ulink"
+                    href="https://github.com/tycho-brahe-platform/annotald"
+                    target="_top"
+                    >Annotald's website</a
+                  >
+                  on GitHub. This will put you in touch with Annotald's
+                  developers, who will help you solve the problem. When creating
+                  issue reports, please try to describe your computer's
+                  configuration and the error message you received in terms that
+                  are as accurate and concise as possible.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="section">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both">
+                <a id="_annotald_ui_and_philosophy"></a>3. Annotald UI and
+                Philosophy
+              </h2>
+            </div>
+          </div>
+        </div>
+        <p>
+          The Annotald user interface (UI) is shown in the following
+          screenshot:<a
+            href="#ftn.idm45697241525008"
+            class="footnote"
+            id="idm45697241525008"
+            ><sup class="footnote">[2]</sup></a
+          >
+        </p>
+        <div class="informalfigure">
+          <div class="mediaobject" align="center">
+            <img
+              src="images/annotald-hello.png"
+              align="middle"
+              alt="The Annotald UI at startup"
+            />
+          </div>
+        </div>
+        <p>
+          On the left-hand side of the screen, the following are present, from
+          top to bottom:
+        </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc">
+            <li class="listitem">
+              The control panel. This contains buttons for functions such as
+              saving, undo/redo, and clocking in/out from a timelog file.
+            </li>
+            <li class="listitem">
+              The tools panel. Empty in this screenshot, this contains advanced
+              functionality when enabled, such as external validation.
+            </li>
+            <li class="listitem">
+              The messages pane. This area displays messages from the program to
+              the user.
+            </li>
+          </ul>
+        </div>
+        <p>
+          Various Annotald functions involve showing a dialog box to the user.
+          For example, the following image demonstrates the message history
+          dialog (accessed by clicking “Messages” above the message area). To
+          dismiss a dialog, press the escape key. (Different dialogs may also
+          display buttons allowing you to close them).
+        </p>
+        <div class="informalfigure">
+          <div class="mediaobject" align="center">
+            <img
+              src="images/annotald-dialog.png"
+              align="middle"
+              alt="An example of a dialog box in Annotald"
+            />
+          </div>
+        </div>
+        <p>
+          The right-hand portion of the screen is devoted to showing the
+          contents of the file being edited. The tree structure of the
+          annotation is represented as a series of concentric boxes. Clauses are
+          highlighted in dark pink, in order to make them more salient, and
+          provide an additional visual reference to the structure of the
+          sentences being edited. The box which represents the file itself is
+          dark brown.
+        </p>
+        <p>
+          Annotald aims to make common tasks in annotation nearly effortless.
+          Thus, complex behaviors can be executed with a single keystroke –
+          often without using modifier keys. Conversely, Annotald tries to
+          prevent users from doing things that would be deleterious to the
+          project of efficiently annotating a corpus. Thus, it is impossible to
+          change the text of the file itself in Annotald. It is also difficult
+          to edit POS tags directly in Annotald's interface. Annotald is
+          optimized for editing a corpus which already contains mostly-accurate
+          POS annotation and at least some syntactic structure. Users with
+          corpora that need extensive POS correction may be better served (at
+          present) by another tool.
+        </p>
+        <p>
+          There are three ways of interacting with Annotald's user interface.
+        </p>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="_mouse"></a>3.1. Mouse</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            It is recommended that Annotald users have a full-sized mouse with
+            at least two buttons. Because of Annotald's heavy reliance on
+            mousing, neither a laptop trackpad nor a single-button mouse will
+            prove satisfactory from an ergonomic point of view.
+          </p>
+          <p>
+            The mouse serves to select nodes in the UI. Click anywhere in the
+            box corresponding to a node in order to select it. The horizontal
+            mouse motion necessary can be reduced by clicking on the left edge
+            of the node; the left side of each node's box is padded in order to
+            facilitate this. An example of a selected node is shown here, notice
+            that the selected node has been highlighted in blue:
+          </p>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-select.png"
+                align="middle"
+                alt="Selection in the Annotald UI"
+              />
+            </div>
+          </div>
+          <p>
+            Up to two nodes may be selected at a time. If a node is selected,
+            clicking another node will also highlight that node:
+          </p>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-select2.png"
+                align="middle"
+                alt="Dual selection in the Annotald UI"
+              />
+            </div>
+          </div>
+          <p>
+            Further clicks after two nodes are selected will de-highlight the
+            previous second selection, and highlight the clicked node. To clear
+            any selection in effect, use the space bar.
+          </p>
+          <p>
+            Selected nodes form the basis for many
+            <a class="link" href="#keycmds" title="4.3. Default keybindings"
+              >keyboard commands</a
+            >. Node selection is also the basis of movement commands, of a
+            certain type. The mouse is used for movement commands that edit the
+            structure of the tree. In order to annotate movement in the sense of
+            linguistic movement (wh-movement, etc.), see the
+            <a class="link" href="#leafAfter"
+              ><code class="literal">leafAfter</code></a
+            >
+            and
+            <a class="link" href="#leafBefore"
+              ><code class="literal">leafBefore</code></a
+            >
+            functions.
+          </p>
+          <p>
+            In order to move a selected node, right click on the desired
+            destination. Movements must satisfy certain structural conditions
+            (e.g. a node cannot be moved into its own daughter) as well as
+            extrinsic conditions (no movement operation may change the text of
+            the sentence, e.g. by reordering two words). Assuming these
+            conditions are met, the movement operation will take place. Right
+            clicking with two selected nodes will move those nodes, as well as
+            any intervening material, to the desired destination. The two
+            selected nodes must be sisters of each other.
+          </p>
+          <div class="note" style="margin-left: 0; margin-right: 10%">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Note]" src="images/icons/note.png" />
+                </td>
+                <th align="left"></th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+                    Moving an empty category (for example a trace) behaves
+                    interestingly, since it is not treated as part of the file's
+                    text by Annotald. This allows some interesting and confusing
+                    movement possibilities. Thus, moving empty categories
+                    (traces beginning with <span class="corpustext">*</span>,
+                    empty nodes which are <span class="corpustext">0</span>, and
+                    <span class="corpustext">CODE</span> nodes) by default is
+                    not allowed. However, moving a non-terminal dominating only
+                    such a node(s) is. So if you need to move an empty node in a
+                    pinch, just create an XP dominating it, do your movement
+                    operation, and delete the XP. Do not be upset though if this
+                    procedure results in interesting behavior (you can always
+                    use undo to get back to a sensible structure).
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>
+            Control-clicking on a node will create and select a new XP
+            dominating that node.
+          </p>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="_context_menu"></a>3.2. Context menu
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Right-clicking a node when no selection is present will summon the
+            context menu, which is illustrated here:
+          </p>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-context.png"
+                align="middle"
+                alt="The Annotald context menu"
+              />
+            </div>
+          </div>
+          <p>
+            The context menu has three columns. The first has suggested label
+            changes for the node; clicking any of these will change the node's
+            label to the chosen option. The second contains options for adding a
+            sister before the node; clicking any of these will insert a node
+            with the given label and text. The third column contains options for
+            toggling certain dash tags.
+          </p>
+          <p>
+            The context menu can be dismissed by left-clicking outside of it.
+          </p>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="_keyboard"></a>3.3. Keyboard</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Annotald operations other than movement are controlled by the
+            keyboard. Annotald users should keep their right hand on the mouse
+            at all times; thus, only keys on the left hand side of the keyboard
+            are used as key shortcuts (with a small number of exceptions for
+            commands which require full keyboard use).<a
+              href="#ftn.idm45697241484032"
+              class="footnote"
+              id="idm45697241484032"
+              ><sup class="footnote">[3]</sup></a
+            >
+          </p>
+          <p>
+            Generally speaking, Annotald key commands perform annotation
+            operations related to a single goal. One key, for example, toggles
+            between the tags for different kinds of argument NPs. For more on
+            <a class="link" href="#keycmds" title="4.3. Default keybindings"
+              >the default keybindings</a
+            >, including their organizing principles, or on
+            <a class="link" href="#customkeys" title="4.4. Custom keybindings"
+              >customizing the key commands to fit your annotation needs</a
+            >, see the linked sections.
+          </p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both">
+                <a id="_customization"></a>4. Customization
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="cmdline-opts"></a>4.1. Command line options
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            When invoked via the command line, there are several options which
+            can be passed to Annotald to affect its behavior. These are:
+          </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+                  <code class="literal">-s PATH</code>
+                </span>
+              </dt>
+              <dd>
+                Specify the path to the
+                <a
+                  class="link"
+                  href="#jssettings"
+                  title="Javascript customization options"
+                  >javascript settings file</a
+                >. If this is not specified, the default settings file
+                distributed with Annotald is used.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">-S PATH</code>
+                </span>
+              </dt>
+              <dd>
+                Specify the path to the
+                <a class="link" href="#pythonsettings" title="Python settings"
+                  >python settings file</a
+                >. If this is not specified, the default settings file
+                distributed with Annotald is used.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">-p NUMBER</code>
+                  <a id="port-option"></a>
+                </span>
+              </dt>
+              <dd>
+                Specify the port which Annotald will run its server. The default
+                is 8080 (possible values range between 1025 and 65535). Only one
+                program may listen to a given port, so if you would like to run
+                more than one instance of Annotald concurrently, you must
+                specify a different port for each of them. The port is sepcified
+                in the Chrome browser after
+                <code class="literal">localhost:</code>. Thus, the default URL
+                for Annotald is
+                <a class="ulink" href="http://localhost:8080" target="_top"
+                  >http://localhost:8080</a
+                >. If you have started Annotald with the
+                <code class="literal">-p 8081</code> option, you should use
+                <a class="ulink" href="http://localhost:8081" target="_top"
+                  >http://localhost:8081</a
+                >
+                as the URL in the browser.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">-o</code>
+                </span>
+              </dt>
+              <dd>
+                Specify that the file to be read from is a CorpusSearch output
+                file. CorpusSearch comments will be stripped from the file on
+                reading.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">-q</code> <a id="cmdline-q"></a>
+                </span>
+              </dt>
+              <dd>
+                Deactivate the
+                <a class="link" href="#timelog" title="5.2. Event log"
+                  >time-logging function</a
+                >.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">-n NUMBER</code>
+                </span>
+              </dt>
+              <dd>
+                Show only NUMBER trees of the file at a time, as described
+                <a
+                  class="link"
+                  href="#limiteddisplay"
+                  title="5.1. Limited display"
+                  >below</a
+                >.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">-1</code>
+                </span>
+              </dt>
+              <dd>
+                A shortcut which is equivalent to
+                <code class="literal">-n 1</code>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="_settings_files"></a>4.2. Settings files
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            There are two files which are relavant to the customization of
+            Annotald: <code class="literal">settings.js</code> and
+            <code class="literal">settings.py</code>. The former is written in
+            Javascript, and contains the bulk of Annotald's user interface
+            settings. The latter is written in Python, and (generally speaking)
+            contains customizations that are very pervasive or advanced. A basic
+            version of both files is included in the Annotald package.
+          </p>
+          <p>
+            In order to customize these files, the user should first extract a
+            copy thereof. An auxiliary script is provided for this purpose.
+            Execute the following commands in your OS shell to obtain copies of
+            each of these files:
+          </p>
+          <pre class="literallayout">
+$ annotald-aux cat-settings-js &gt; my-settings.js
+$ annotald-aux cat-settings-py &gt; my-settings.py</pre
+          >
+          <p>
+            You can now edit the files
+            <code class="literal">my-settings.js</code> and
+            <code class="literal">my-settings.py</code>, using the instructions
+            given below. These files may be placed anywhere on your hard drive,
+            as long as you provide the correct path to the customized file(s)
+            using the <code class="literal">-s</code> and
+            <code class="literal">-S</code>
+            <a
+              class="link"
+              href="#cmdline-opts"
+              title="4.1. Command line options"
+              >command line options</a
+            >.
+          </p>
+          <div class="section">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title">
+                    <a id="jssettings"></a>Javascript customization options
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <p>
+              In this section, the options in
+              <code class="literal">settings.js</code> will be discussed.
+            </p>
+            <div class="variablelist">
+              <dl class="variablelist">
+                <dt>
+                  <span class="term">
+                    <code class="literal">logDetail</code>
+                    <a id="logdetail"></a>
+                  </span>
+                </dt>
+                <dd>
+                  This variable should be a Boolean value (<code class="literal"
+                    >true</code
+                  >
+                  or <code class="literal">false</code>). It controls the
+                  operation of the
+                  <a class="link" href="#timelog" title="5.2. Event log"
+                    >time logging function</a
+                  >.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">displayCaseMenu</code>
+                    <a id="casevars"></a>
+                  </span>
+                </dt>
+                <dd>
+                  Whether or not to display options for changing the case of
+                  items in the context menu. See the discussion of this feature
+                  <a class="link" href="#casemenu" title="5.3. Case menu"
+                    >below</a
+                  >
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">caseTags</code>
+                  </span>
+                </dt>
+                <dd>
+                  <p class="simpara">
+                    A list of the labels which can receive a tag indicating
+                    their case. Generally speaking, these will be leaf nodes.
+                    Although an entire NP (for example) might be said to have
+                    case, the only surface reflexes of case are the marking of
+                    individual words. Furthermore, within a single NP it is
+                    possible for some constituents to not express the phrase's
+                    features.<a
+                      href="#ftn.idm45697241431680"
+                      class="footnote"
+                      id="idm45697241431680"
+                      ><sup class="footnote">[4]</sup></a
+                    >
+                  </p>
+                  <p class="simpara">
+                    Therefore, the minimal annotation that captures the
+                    linguistic facts places case on the leaf nodes; phrasal case
+                    can be calculated based on that information. However,
+                    Annotald provides functions to make this less tedious – to
+                    allow the annotator to mark a whole NP for case, and have
+                    that information updated on all the relevant subconstituents
+                    of that NP.
+                  </p>
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">casePhrases</code>
+                  </span>
+                </dt>
+                <dd>
+                  A list of phrasal categories that bear case. These will
+                  provide an option in the context menu to set their case (which
+                  actually sets the case of their subconstituents).
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">caseMarkers</code>
+                  </span>
+                </dt>
+                <dd>
+                  A list of case markers. Each of these is a dash tag (given in
+                  the Javascript file without surrounding dashes) that may be
+                  attachedto a member of
+                  <code class="literal">caseTags</code> to indicate its case.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">caseBarriers</code>
+                  </span>
+                </dt>
+                <dd>
+                  A list of phrases which should form barriers to recursive case
+                  assignment. When case is assigned to an NP, Annotald looks
+                  (recursively) for all its daughters which are
+                  case-marker-bearing, and changes their case. But, this process
+                  should not recurse into e.g. a relative clause, or a genitive
+                  possessor. Thus, any node in this list will block further
+                  case-setting traversal.
+                </dd>
+              </dl>
+            </div>
+            <div class="note" style="margin-left: 0; margin-right: 10%">
+              <table border="0" summary="Note">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Note]" src="images/icons/note.png" />
+                  </td>
+                  <th align="left"></th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>
+                      The variables <code class="literal">caseTags</code>,
+                      <code class="literal">casePhrases</code>, and
+                      <code class="literal">caseBarriers</code> cannot contain
+                      dashes; they must be genuine top-level category labels.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="variablelist">
+              <dl class="variablelist">
+                <dt>
+                  <span class="term">
+                    <code class="literal">testValidPhraseLabel</code>/<code
+                      class="literal"
+                      >testValidLeafLabel</code
+                    >
+                  </span>
+                </dt>
+                <dd>
+                  See the discussion of these options
+                  <a
+                    class="link"
+                    href="#tagset-validate"
+                    title="6.1. Tagset validation"
+                    >below</a
+                  >
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">extensions</code>
+                  </span>
+                </dt>
+                <dd>
+                  <p class="simpara">
+                    Specify the list and order of dash tags available in the
+                    corpus. There are three variants of this variable:
+                  </p>
+                  <div class="itemizedlist">
+                    <a id="extensions-vars"></a>
+                    <ul class="itemizedlist" style="list-style-type: disc">
+                      <li class="listitem">
+                        <code class="literal">leaf_extensions</code>: Dash tags
+                        applicable to leaf (terminal) nodes
+                      </li>
+                      <li class="listitem">
+                        <code class="literal">clause_extensions</code>: Dash
+                        tags applicable to clausal nodes (of category CP or IP)
+                      </li>
+                      <li class="listitem">
+                        <code class="literal">extensions</code>: Dash tags
+                        applicable to non-clausal non-leaf nodes
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="simpara">
+                    Not every dash tag needs to appear in this list, only those
+                    which need to be toggled on and off in a binary fashion.
+                    Thus, for example, the dash tag
+                    <span class="corpustext">OB1</span> (for direct objects) is
+                    never toggled in a binary fashion, but rather as part of a
+                    cycle that includes setting the category to
+                    <span class="corpustext">NP</span> and moving through
+                    <span class="corpustext">NP-SBJ</span>,
+                    <span class="corpustext">NP-OB2</span>, etc. Thus, it need
+                    not appear in this list. However, the
+                    <span class="corpustext">SPE</span> dash tag (for reported
+                    speech) is toggled on and off – changing an
+                    <span class="corpustext">IP-XXX</span> to
+                    <span class="corpustext">IP-XXX-SPE</span>, and potentially
+                    back to IP-XXX.
+                  </p>
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">ipnodes</code>
+                  </span>
+                </dt>
+                <dd>
+                  A list of categories which are clauses. These are highlighted
+                  (with a tan shade) to make it clear where the “floor” of a
+                  clause is, for the purpose of rearranging nodes in the user
+                  interface.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">commentTypes</code>
+                  </span>
+                </dt>
+                <dd>
+                  <a id="commenttypes-vars"></a> Types of comments. Comments are
+                  nodes of the form
+                  <span class="corpustext">(CODE {XXX:words_words_words})</span>
+                  For every value of “XXX” is in this list, when editing the
+                  contents of the comment with
+                  <a class="link" href="#displayRename">the editing function</a
+                  >, a dialog box will appear allowing the comment to be edited
+                  as text, instead of the default editing interface.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">customCommands</code>
+                  </span>
+                </dt>
+                <dd>
+                  A Javascript function containing code to configure the
+                  keybindings. This should be a series of calls to the
+                  <a
+                    class="ulink"
+                    href="../api-doc/symbols/global.html#addCommand"
+                    target="_top"
+                    ><code class="literal">addCommand</code> function</a
+                  >.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">defaultConMenuGroup</code>
+                  </span>
+                </dt>
+                <dd>
+                  The label suggestions to display in the context (right-click)
+                  menu, when no suggestion can be deduced from the
+                  already-present label.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">customConMenuGroups</code>
+                  </span>
+                </dt>
+                <dd>
+                  a Javascript function to configure the context menu
+                  suggestions. This should be a series of calls to the
+                  <a
+                    class="ulink"
+                    href="../api-doc/symbols/global.html#addConMenuGroup"
+                    target="_top"
+                    ><code class="literal">addConMenuGroup</code> function</a
+                  >.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">customConLeafBefore</code>
+                  </span>
+                </dt>
+                <dd>
+                  a Javascript function to configure the new node options in the
+                  context menu. This should be a series of calls to the
+                  <a
+                    class="ulink"
+                    href="../api-doc/symbols/global.html#addConLeafBefore"
+                    target="_top"
+                    ><code class="literal">addConLeafBefore</code></a
+                  >
+                  and
+                  <a
+                    class="ulink"
+                    href="../api-doc/symbols/global.html#addConLeafAfter"
+                    target="_top"
+                    ><code class="literal">addConLeafAfter</code></a
+                  >
+                  functions.
+                </dd>
+              </dl>
+            </div>
+            <div class="section">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h5 class="title">
+                      <a id="_color_schemes"></a>Color schemes
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <p>
+                In the javascript settings file, you may also place calls to the
+                <a
+                  class="ulink"
+                  href="../api-doc/symbols/global.html#styleTag"
+                  target="_top"
+                  ><code class="literal">styleTag</code></a
+                >
+                and
+                <a
+                  class="ulink"
+                  href="../api-doc/symbols/global.html#styleDashTag"
+                  target="_top"
+                  ><code class="literal">styleDashTag</code></a
+                >
+                functions. These allow you to specify alternate colors for
+                certain nodes in the corpus. As their names suggest,
+                <code class="literal">styleTag</code> operates on category-level
+                tags, whereas <code class="literal">styleDashTag</code> operates
+                on dash tags. The first argument of the function is the tag to
+                apply a style to. The second is a sequence of
+                <a
+                  class="ulink"
+                  href="https://developer.mozilla.org/en-US/docs/CSS/CSS_Reference"
+                  target="_top"
+                  >CSS rules</a
+                >.
+              </p>
+              <p>
+                A full explanation of CSS is beyond the scope of the present
+                document. Suffice it to say that CSS consists of a sequence of
+                rules of the form <code class="literal">key: value;</code>. Two
+                keys relevant for present purposes are
+                <code class="literal">color</code> and
+                <code class="literal">background-color</code>, which set the
+                text and backgroudn color, respectively. The
+                <code class="literal">value</code> for the color can be a color
+                name from
+                <a
+                  class="ulink"
+                  href="https://developer.mozilla.org/en-US/docs/CSS/color_value"
+                  target="_top"
+                  >this list</a
+                >, or a specification of the form
+                <code class="literal">#RRGGBB</code>.
+                <code class="literal">RR</code> here represents a 2-digit
+                hexadecimal (i.e. base 16) number giving the intensity of the
+                red component of the color; <code class="literal">GG</code> and
+                <code class="literal">BB</code> give green and blue intensities
+                respectively. The following Javascript will, when placed in the
+                <code class="literal">settings.js</code> file, give all verbal
+                tags a green background, and make all
+                <code class="literal">-SBJ</code> elements appear in red text:
+              </p>
+              <pre class="programlisting">
+styleDashTag("SBJ", "color:red;");
+
+_.each(["BE","DO","HV","VB"], function (tag) {
+    styleTag(tag,       "background-color:green;");
+    styleTag(tag + "D", "background-color:green;");
+    styleTag(tag + "P", "background-color:green;");
+})</pre
+              >
+              <p>
+                Note the use of a looping construct to decrease the amount of
+                boilerplate needed when styling all the forms of the verbal tag.
+                The results of inserting this snippet in a settings file are
+                shown here:
+              </p>
+              <div class="informalfigure">
+                <div class="mediaobject" align="center">
+                  <img
+                    src="images/annotald-colors.png"
+                    align="middle"
+                    alt="A custom stylesheet in Annotald"
+                  />
+                </div>
+              </div>
+              <p>
+                Users who know how to write their own CSS rules may do so using
+                the
+                <a class="link" href="#colorcss"
+                  ><code class="literal">colorCSS</code></a
+                >
+                functionality. Annotald maintains the label of a node as part of
+                the CSS class attribute. You will probably need to write fairly
+                complex selectors for this; see the source for the
+                <code class="literal">style(Dash)Tag</code> functions for
+                inspiration.
+              </p>
+            </div>
+          </div>
+          <div class="section">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title">
+                    <a id="pythonsettings"></a>Python settings
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <p>
+              In this section, the settings specifiable in a
+              <code class="literal">settings.py</code> file will be discussed.
+            </p>
+            <div class="variablelist">
+              <dl class="variablelist">
+                <dt>
+                  <span class="term">
+                    <code class="literal">extraJavascripts</code>
+                  </span>
+                </dt>
+                <dd>
+                  The path to additional javascript files to be included in the
+                  page. This is relevant if for advanced users who are writing
+                  their own
+                  <a
+                    class="link"
+                    href="#customjs"
+                    title="6.3. Custom Javascript"
+                    >javascript functions</a
+                  >
+                  and would like to include external libraries.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">debugJs</code>
+                  </span>
+                </dt>
+                <dd>
+                  Include debugger-friendly versions of javascript files in the
+                  page. Only Annotald developers need to set this; for users the
+                  default value <code class="literal">False</code> is
+                  appropriate.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">colorCSS</code> <a id="colorcss"></a>
+                  </span>
+                </dt>
+                <dd>Whether to use a user-supplied CSS file.</dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">colorCSSPath</code>
+                  </span>
+                </dt>
+                <dd>The path to the user-supplied CSS file.</dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">rewriteIndices</code>
+                    <a id="rewriteindices"></a>
+                  </span>
+                </dt>
+                <dd>
+                  By default, Annotald normalizes the indices of files when
+                  saving. Thus, if you split a sentence into two root-level
+                  clauses, the indices in the second clause will begin at 1 and
+                  count up monotonically, even though they may have been
+                  originally higher by virtue of having been split from later in
+                  another clause. If you do not want this behavior, set this
+                  variable to <code class="literal">False</code>.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">validators</code>
+                  </span>
+                </dt>
+                <dd>
+                  See the
+                  <a
+                    class="link"
+                    href="#externalvalidation"
+                    title="6.2. External validation"
+                    >section on external validation</a
+                  >
+                  for information on this option.
+                </dd>
+                <dt>
+                  <span class="term">
+                    <code class="literal">serverMode</code>
+                  </span>
+                </dt>
+                <dd>
+                  By default, Annotald starts up in “server mode,” which
+                  presents you with a checkpoint before opening a file. This is
+                  to avoid mishaps when Annotald is used in a multi-user
+                  environment. In order to disable this, set this variable to
+                  <code class="literal">False</code>.
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="keycmds"></a>4.3. Default keybindings
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            The Annotald keybindings provided by default are adapted from those
+            used by the IcePaHC project. It is highly recommended that users
+            make a copy of this file in the working directory for their corpus,
+            and customize it to their needs. The procedure to do so is described
+            in the following section. The default keybindings are as follows
+            (from left to right and top to bottom of a US keyboard layout):<a
+              href="#ftn.idm45697241331216"
+              class="footnote"
+              id="idm45697241331216"
+              ><sup class="footnote">[5]</sup></a
+            >
+          </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt><span class="term"> Backquote (`) </span></dt>
+              <dd>Toggle the display of lemmata on or off</dd>
+              <dt><span class="term"> 1 </span></dt>
+              <dd>Unbound</dd>
+              <dt><span class="term"> 2 </span></dt>
+              <dd>Cycle between tags for non-argument NPs</dd>
+              <dt><span class="term"> @ (Shift-2) </span></dt>
+              <dd>
+                <a class="link" href="#splitWord">Split a word</a>
+              </dd>
+              <dt><span class="term"> 3 </span></dt>
+              <dd>Unbound</dd>
+              <dt><span class="term"> 4 </span></dt>
+              <dd>
+                Toggle the <span class="corpustext">-PRN</span> dash tag
+                (parentheticals)
+              </dd>
+              <dt><span class="term"> 5 </span></dt>
+              <dd>
+                Toggle the <span class="corpustext">-SPE</span> dash tag (direct
+                speech)
+              </dd>
+              <dt><span class="term"> Q </span></dt>
+              <dd>Cycle between tags for miscellaneous phrase types</dd>
+              <dt><span class="term"> W </span></dt>
+              <dd>Cycle between tags for argumental NPs</dd>
+              <dt><span class="term"> E </span></dt>
+              <dd>Cycle between tags for miscellaneous CPs</dd>
+              <dt><span class="term"> R </span></dt>
+              <dd>Cycle between tags for relative clauses</dd>
+              <dt><span class="term"> T </span></dt>
+              <dd>Cycle between tags for that-clauses and other types of CP</dd>
+              <dt><span class="term"> A </span></dt>
+              <dd>Add a leaf after the selected node</dd>
+              <dt><span class="term"> S </span></dt>
+              <dd>Cycle between tags for different types of sentential IP</dd>
+              <dt><span class="term"> D </span></dt>
+              <dd>Delete a node</dd>
+              <dt><span class="term"> F </span></dt>
+              <dd>Cycle between tags for PPs and ADVPs</dd>
+              <dt><span class="term"> G </span></dt>
+              <dd>Cycle between tags for ADJPs and QPs</dd>
+              <dt><span class="term"> Z </span></dt>
+              <dd>Undo</dd>
+              <dt><span class="term"> X </span></dt>
+              <dd>Create a new node (labeled XP)</dd>
+              <dt><span class="term"> C </span></dt>
+              <dd>Coindex nodes</dd>
+              <dt><span class="term"> Shift + C </span></dt>
+              <dd>
+                Toggle
+                <a
+                  class="link"
+                  href="#collapsing-nodes"
+                  title="5.5. Collapsing nodes"
+                  >collapsing</a
+                >
+                of a node
+              </dd>
+              <dt><span class="term"> V </span></dt>
+              <dd>Cycle between tags for non-sentential IPs</dd>
+              <dt><span class="term"> Spacebar </span></dt>
+              <dd>Clear the selection</dd>
+              <dt><span class="term"> L </span></dt>
+              <dd>Edit the Label and/or text of a node</dd>
+              <dt><span class="term"> Shift + L </span></dt>
+              <dd>
+                The same (included as an example of a keybinding with modifier)
+              </dd>
+              <dt><span class="term"> Forward slash (/) </span></dt>
+              <dd>
+                <a class="link" href="#search" title="5.4. Searching">Search</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="customkeys"></a>4.4. Custom keybindings
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            It is virtually certain that users will want to adapt the default
+            key bindings, to adapt the tags used and the most common use
+            patterns of the annotators. It is possible to merely change the
+            specific tags used while maintaining the default conceptual
+            categories (argumental NP, non-sentential IP, etc.); it is also
+            possible to come up with an entirely new scheme. The default
+            bindings do not use the shift or control modifiers, which opens up a
+            large space of additional keys for user customization.
+          </p>
+          <p>
+            The keybindings of Annotald are customized by placing calls to the
+            <code class="literal">addCommand</code> function inside the
+            <code class="literal">customCommands</code> block. This function has
+            2 required arguments; any further arguments are determined by the
+            command being bound. The first argument to the function should be a
+            Javascript dictionary (also known as an object). This has the format
+            <code class="literal">{key: value, key2: value2}</code>. The
+            following keys are recognized:
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc">
+              <li class="listitem">
+                <code class="literal">keycode</code> the numeric Javascript
+                keycode of the key you wish to bind. You can navigate to
+                <a
+                  class="ulink"
+                  href="http://www.asquare.net/javascript/tests/KeyCode.html"
+                  target="_top"
+                  >this website</a
+                >
+                to determine interactively the code for any key on your
+                keyboard. Be sure to use the “keypress” code, not the “keydown”
+                or “keyup” ones.
+              </li>
+              <li class="listitem">
+                <code class="literal">ctrl</code> the value
+                <code class="literal">true</code> if this binding is for a
+                shortcut with the control key pressed. Ergonomically, it is much
+                easier to actuate such shortcuts if you remap the “Caps Lock”
+                key on your keyboard to control, so that it can be pressed with
+                the pinky without needing to reach very far. A panoply of
+                methods to do so are presented at
+                <a
+                  class="ulink"
+                  href="http://emacswiki.org/emacs/MovingTheCtrlKey"
+                  target="_top"
+                  >this website</a
+                >.
+              </li>
+              <li class="listitem">
+                <code class="literal">shift</code> the value true if this
+                binding is for a shortcut with the shift key pressed.
+              </li>
+            </ul>
+          </div>
+          <p>
+            The <code class="literal">ctrl</code> and
+            <code class="literal">shift</code> options are mutually exclusive.
+          </p>
+          <p>
+            The second argument to the
+            <code class="literal">addCommand</code> function is the name of the
+            function which the key will be bound to. Any further arguments will
+            be passed to the function given. A list of functions provided by
+            Annotald follows:
+          </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+                  <code class="literal">clearSelection</code>
+                </span>
+              </dt>
+              <dd>Remove any selected node(s). No arguments.</dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">coIndex</code>
+                </span>
+              </dt>
+              <dd>
+                <p class="simpara">
+                  Various effects related to the numeric suffixes that indicate
+                  movement/coreference/etc. chains:
+                </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" style="list-style-type: disc">
+                    <li class="listitem">
+                      If called with only one node selected: remove this node's
+                      numeric index.
+                    </li>
+                    <li class="listitem">
+                      If called with two nodes selected, only one of which has
+                      an index: add an index matching the indexed node to the
+                      non-indexed node.
+                    </li>
+                    <li class="listitem">
+                      If called with two nodes selected, neither of which has an
+                      index: add matching indices to both nodes.
+                    </li>
+                    <li class="listitem">
+                      If called with two nodes selected whose indices match:
+                      cycle through different index types. The cycle is: regular
+                      indices (both indices appended with
+                      <code class="literal">-</code>) → gapping (first index
+                      appended with <code class="literal">=</code>) → backwards
+                      gaping (second index appended with
+                      <code class="literal">=</code>) → double gapping (both
+                      indices appended with <code class="literal">=</code>) →
+                      remove indices.
+                    </li>
+                  </ul>
+                </div>
+                <p class="simpara">No arguments.</p>
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">editNode</code>
+                  <a id="displayRename"></a>
+                </span>
+              </dt>
+              <dd>
+                Edit the text of the currently selected node. If this is a
+                non-terminal, edit its label. If this is a terminal, allow
+                editing its label, lemma (if present) and text (iff the text is
+                an “empty element” – trace, comment, etc.) This function handles
+                <a class="link" href="#commenttypes-vars">comment nodes</a>
+                specially, as shown below. No arguments.
+              </dd>
+            </dl>
+          </div>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-comment-editor.png"
+                align="middle"
+                alt="The Annotald comment editor"
+              />
+            </div>
+          </div>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+                  <code class="literal">leafAfter</code>,
+                  <code class="literal">leafBefore</code>
+                </span>
+              </dt>
+              <dd>
+                <p class="simpara">
+                  <a id="leafBefore"></a> <a id="leafAfter"></a> Create a leaf
+                  node after or before the (first-)selected node. A heuristic is
+                  used to determine the type of node to create. If only one node
+                  is selected, the default is to create an empty conjoined
+                  subject (i.e. <span class="corpustext">(NP-SBJ *con*)</span>)
+                  If there are two nodes selected, the second-selected node
+                  determines the type of leaf to make. If this node is:
+                </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" style="list-style-type: disc">
+                    <li class="listitem">
+                      a wh-phrase (label begins with
+                      <span class="corpustext">W</span>), a wh-trace (<span
+                        class="corpustext"
+                        >*T*</span
+                      >) is created
+                    </li>
+                    <li class="listitem">
+                      a clitic (label contains the dash tag
+                      <span class="corpustext">CL</span>), a clitic trace (<span
+                        class="corpustext"
+                        >*CL*</span
+                      >) is created
+                    </li>
+                    <li class="listitem">
+                      otherwise, an extraposition trace (<span
+                        class="corpustext"
+                        >*ICH*</span
+                      >) is created
+                    </li>
+                  </ul>
+                </div>
+                <p class="simpara">
+                  The label of the created node in these cases is determined by
+                  the label of the second-selected node. Generally, the label of
+                  that node is copied, except: - in the case of a wh-trace, the
+                  leading <span class="corpustext">W</span> is stripped (so the
+                  trace of a <span class="corpustext">WNP</span> is an
+                  <span class="corpustext">NP</span>, etc.) - in the case of a
+                  clitic trace, the <span class="corpustext">CL</span> dash tag
+                  is stripped and <span class="corpustext">PRO</span> is
+                  transformed to <span class="corpustext">NP</span> (so the
+                  trace of <span class="corpustext">PRO-CL</span> is an
+                  <span class="corpustext">NP</span>, and the trace of
+                  <span class="corpustext">ADVP-CL</span> is
+                  <span class="corpustext">ADVP</span>).
+                </p>
+                <p class="simpara">
+                  Additionally, the trace and its antecedent (the
+                  second-selected node) are coindexed. No arguments.
+                </p>
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">makeNode</code>
+                </span>
+              </dt>
+              <dd>
+                Create a new node dominating the selected node, or the span
+                between the two selected nodes (inclusive). This function takes
+                an optional argument specifying the label of the node to create;
+                if not present, the label of the new node will be “XP”. One
+                optional argument.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">pruneNode</code>
+                </span>
+              </dt>
+              <dd>
+                Delete the selected node. If a non-terminal node is selected,
+                the operation always succeeds, and the daughters of the deleted
+                node become daughters of the deleted node's parent. If a
+                terminal node is selected, the operation can succeed only if the
+                node is
+                <a class="link" href="#emptyelements"
+                  >empty of textual content</a
+                >. No arguments.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">setLabel</code>
+                </span>
+              </dt>
+              <dd>
+                <p class="simpara">
+                  Set the label of the selected node. The argument must be a
+                  list of labels. If the node's current label is not present in
+                  the list, it is set to the first entry in the list. Otherwise,
+                  it is set to the node immediately following its current label
+                  in the list (wrapping around at the end of the list). To
+                  illustrate, if the “f” key is bound to
+                  <code class="literal">setLabel</code> with an argument of
+                  <code class="literal">["FOO","BAR"]</code>, selecting a node
+                  with label “QUUX” and pressing the “f” key sequentially will
+                  yield:
+                </p>
+                <div class="orderedlist">
+                  <ol class="orderedlist" type="1">
+                    <li class="listitem">
+                      the label being set to
+                      <span class="corpustext">FOO</span> (since “QUUX” is not
+                      in the provided list)
+                    </li>
+                    <li class="listitem">
+                      the label being set to
+                      <span class="corpustext">BAR</span> (since “BAR” follows
+                      “FOO” in the list)
+                    </li>
+                    <li class="listitem">
+                      the label being set to
+                      <span class="corpustext">FOO</span> (since “BAR” is at the
+                      end of the list, wrap to the beginning)
+                    </li>
+                    <li class="listitem">etc.</li>
+                  </ol>
+                </div>
+                <p class="simpara">One argument.</p>
+              </dd>
+              <dt>
+                <span class="term">
+                  <a id="splitWord"></a> <code class="literal">splitWord</code>
+                </span>
+              </dt>
+              <dd>
+                Split a word (for example, to break up a contraction). Annotald
+                will display a dialog box with the text of the selected leaf.
+                You should enter an “@” (at-sign) at the location where the
+                words should be split. Annotald will then create two leaves, one
+                containing the text to the left of the “@” and one the text to
+                the right. Annotald adds <span class="corpustext">@</span> to
+                the beginning or end of the resulting leaves, to indicate that a
+                splitting operation has taken place.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">toggleExtension</code>
+                </span>
+              </dt>
+              <dd>
+                Toggle a dash tag on the selected node. If the (first) argument
+                exists as a dash tag on the node, remove it. Otherwise, add it.
+                The optional second argument gives a list of extensions in the
+                order they should appear from the base category out; if not
+                given, it is filled from one of
+                <a class="link" href="#extensions-vars"
+                  >the <code class="literal">extensions</code>-family
+                  variables</a
+                >
+                based on a heuristic as to the type of node which is selected.
+                One mandatory and one optional argument.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">toggleLemmata</code>
+                </span>
+              </dt>
+              <dd>
+                Toggle whether lemmata are shown or hidden in the UI. No
+                arguments.
+              </dd>
+              <dt>
+                <span class="term">
+                  <code class="literal">undo</code>/<code class="literal"
+                    >redo</code
+                  >
+                </span>
+              </dt>
+              <dd>
+                Undo the most recent editing operations, or redo after undoing
+                something. No arguments.
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both">
+                <a id="_additional_features"></a>5. Additional features
+              </h2>
+            </div>
+          </div>
+        </div>
+        <p>
+          This section addresses Annotald features that, while not necessary for
+          annotation, can be convenient in certain circumstances. Generally
+          speaking, the features in this section do not require any programming
+          in order to be useful. Features which do require programming are
+          discussed in the
+          <a class="link" href="#advanced-features" title="6. Advanced features"
+            >next section</a
+          >
+        </p>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="limiteddisplay"></a>5.1. Limited display
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Annotald supports showing only a limited number of trees at a time
+            in the browser interface. Some people find that annotating in this
+            manner feels more natural. In order to activate this feature, pass
+            the <code class="literal">-n</code> command line option to Annotald,
+            followed by a number indicating how many trees to show at a time. As
+            a shortcut for <code class="literal">-n 1</code>, you can also use
+            <code class="literal">-1</code> (in both cases, the last character
+            is the numeral one).
+          </p>
+          <p>
+            When this mode is active, Annotald will have a “previous tree,”
+            “next tree,” and “goto tree” button; the latter of which operates
+            based on the index shown in the left-hand menu. This appears as in
+            the following screenshot:<a
+              href="#ftn.idm45697241191696"
+              class="footnote"
+              id="idm45697241191696"
+              ><sup class="footnote">[6]</sup></a
+            >
+          </p>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-one-tree.png"
+                align="middle"
+                alt="One-tree mode in Annotald"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="timelog"></a>5.2. Event log</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Annotald supports keeping a log of actions that you take in the
+            program. This log is stored in a non-user-readable file called
+            <code class="literal">annotaldLog.shelve</code> in the directory
+            from which Annotald is invoked.<a
+              href="#ftn.idm45697241186016"
+              class="footnote"
+              id="idm45697241186016"
+              ><sup class="footnote">[7]</sup></a
+            >
+            There are three levels of logging possible:
+          </p>
+          <div class="informaltable">
+            <table
+              class="informaltable"
+              cellpadding="4px"
+              style="
+                border-collapse: collapse;
+                border-top: 3px solid #527bbd;
+                border-bottom: 3px solid #527bbd;
+                border-left: 3px solid #527bbd;
+                border-right: 3px solid #527bbd;
+              "
+            >
+              <colgroup>
+                <col class="col_1" />
+                <col class="col_2" />
+                <col class="col_3" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th
+                    style="
+                      border-right: 1px solid #527bbd;
+                      border-bottom: 1px solid #527bbd;
+                    "
+                    align="left"
+                    valign="top"
+                  >
+                    Type
+                  </th>
+                  <th
+                    style="
+                      border-right: 1px solid #527bbd;
+                      border-bottom: 1px solid #527bbd;
+                    "
+                    align="center"
+                    valign="top"
+                  >
+                    <a class="link" href="#cmdline-q">Command line flag</a>
+                  </th>
+                  <th
+                    style="border-bottom: 1px solid #527bbd"
+                    align="center"
+                    valign="top"
+                  >
+                    <a class="link" href="#logdetail"
+                      ><code class="literal">logDetail</code></a
+                    >
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    style="
+                      border-right: 1px solid #527bbd;
+                      border-bottom: 1px solid #527bbd;
+                    "
+                    align="left"
+                    valign="top"
+                  >
+                    <p>
+                      <span class="strong"><strong>no logging</strong></span>
+                    </p>
+                  </td>
+                  <td
+                    style="
+                      border-right: 1px solid #527bbd;
+                      border-bottom: 1px solid #527bbd;
+                    "
+                    align="center"
+                    valign="top"
+                  >
+                    <p><code class="literal">-q</code></p>
+                  </td>
+                  <td
+                    style="border-bottom: 1px solid #527bbd"
+                    align="center"
+                    valign="top"
+                  >
+                    <p>N/A</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="
+                      border-right: 1px solid #527bbd;
+                      border-bottom: 1px solid #527bbd;
+                    "
+                    align="left"
+                    valign="top"
+                  >
+                    <p>
+                      <span class="strong"
+                        ><strong>major event logging</strong></span
+                      >
+                    </p>
+                  </td>
+                  <td
+                    style="
+                      border-right: 1px solid #527bbd;
+                      border-bottom: 1px solid #527bbd;
+                    "
+                    align="center"
+                    valign="top"
+                  >
+                    <p>none</p>
+                  </td>
+                  <td
+                    style="border-bottom: 1px solid #527bbd"
+                    align="center"
+                    valign="top"
+                  >
+                    <p><code class="literal">false</code></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="border-right: 1px solid #527bbd"
+                    align="left"
+                    valign="top"
+                  >
+                    <p>
+                      <span class="strong"><strong>full logging</strong></span>
+                    </p>
+                  </td>
+                  <td
+                    style="border-right: 1px solid #527bbd"
+                    align="center"
+                    valign="top"
+                  >
+                    <p>none</p>
+                  </td>
+                  <td style="" align="center" valign="top">
+                    <p><code class="literal">true</code></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            The “major event logging” setting records when the program is opened
+            and closed, as well as when the file is validated or saved. That is,
+            it records events visible to the Annotald server. It does not record
+            any actions taken in the browser. Full logging, on the other hand,
+            records clicks.
+          </p>
+          <p>
+            Each event has associated with it a timestamp, which is recorded as
+            seconds since the
+            <a
+              class="ulink"
+              href="https://en.wikipedia.org/wiki/Unix_time"
+              target="_top"
+              >Unix epoch</a
+            >. Currently, the only way to analyze this data is by
+            <a class="link" href="#csv-log">converting it to CSV format</a> and
+            importing it into another analysis program such as
+            <a class="ulink" href="http://www.r-project.org/" target="_top">R</a
+            >. In the future, Annotald will offer built-in ways of generating
+            reports from this data, such as how much annotation time has been
+            spent on each file, or (with full logging enabled) which keys are
+            most often pressed.
+          </p>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="casemenu"></a>5.3. Case menu</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Annotald includes support for manipulating case marking information
+            in corpora which store that information in a supported format. In
+            order to be supported, the case must:<a
+              href="#ftn.idm45697241156496"
+              class="footnote"
+              id="idm45697241156496"
+              ><sup class="footnote">[8]</sup></a
+            >
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc">
+              <li class="listitem">be stored as dash tags,</li>
+              <li class="listitem">at the word level,</li>
+              <li class="listitem">without any unmarked default categories.</li>
+            </ul>
+          </div>
+          <p>
+            Then, <a class="link" href="#casevars">some options</a> need to be
+            set in the configuration file. Once this is done, the context menu
+            will contain options for setting case:
+          </p>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/case-menu.png"
+                align="middle"
+                alt="Annotald context menu with case-setting options"
+              />
+            </div>
+          </div>
+          <p>
+            Invoking the context menu on an individual case-bearing node (one of
+            <a class="link" href="#casevars"
+              ><code class="literal">caseTags</code></a
+            >) will allow that node's case to be changed individually. Invoking
+            it on a case-bearing phrase (one of
+            <a class="link" href="#casevars"
+              ><code class="literal">casePhrases</code></a
+            >) will change the case of all that node's case-bearing daughters,
+            without recursing too deeply.
+          </p>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="search"></a>5.4. Searching</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Annotald has a structural search engine built in. While it cannot
+            replicate the flexibility or (perhaps especially) speed of a
+            dedicated search program such as
+            <a
+              class="ulink"
+              href="http://corpussearch.sourceforge.net/"
+              target="_top"
+              >CorpusSearch</a
+            >, it is useful to be able to search within the Annotald interface
+            itself. The search dialog is accessed by clicking the “Search”
+            button in the Tools menu, or by pressing the forward slash (<code
+              class="literal"
+              >/</code
+            >) key. Within the dialog box, you will construct a visual
+            representation of your query, similar to the representation of trees
+            in the Annotald interface.
+          </p>
+          <p>
+            The simplest query tree contains only one leaf node. The leaf has a
+            text box, into which the search string can be entered. The string is
+            interpreted as a case-insensitive Javascript regular expression. The
+            Javascript regular expression format is very similar to that used by
+            many programming languages. A full description of the format is
+            outside the scope of this document, but is available via
+            <a
+              class="ulink"
+              href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/RegExp"
+              target="_top"
+              >this reference manual</a
+            >. The leaf also has a drop-down box, which indicates whether the
+            search string is to match against the node labels, the text of the
+            corpus, or the lemmata. The search string is additionally
+            left-anchored – that is, the beginning of the regular expression is
+            constrained to match the beginning of a node label or word. Pressing
+            the “Search” button will execute the search. Matches will be
+            highlighted with a yellow box, and the document will be scrolled to
+            display the next match. A very simple query and its result is
+            illustrated in the following screenshots:
+          </p>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-search-simple.png"
+                align="middle"
+                alt="A simple Annotald search"
+              />
+            </div>
+          </div>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-search-simple-result.png"
+                align="middle"
+                alt="Results of a simple Annotald search"
+              />
+            </div>
+          </div>
+          <p>
+            Once the search has completed, two buttons will appear below the
+            “Search” button. The first of these scrolls the document down to
+            display the next match. The second removes teh hithlighting from
+            serach matches.
+          </p>
+          <p>
+            In addition to the search node where text can be entered, there is a
+            node consisting only of a plus sign (“+”). Clicking this node adds a
+            sister to the search node. Search nodes which are sisters are
+            interpreted as the (unordered) sisterhood relation. An example of
+            such a search is given in the following two screenshots:
+          </p>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-search-sister.png"
+                align="middle"
+                alt="A sisterhood Annotald search"
+              />
+            </div>
+          </div>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-search-sister-result.png"
+                align="middle"
+                alt="Results of a sisterhood Annotald search"
+              />
+            </div>
+          </div>
+          <p>
+            Each search node has some buttons in the upper-right hand corner.
+            From left to right, these are:
+          </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt><span class="term"> Or (vertical bar) </span></dt>
+              <dd>
+                This creates an “OR” node as the parent of the node from which
+                it is clicked. The daughters of an “OR” node are interpreted
+                disjunctively, instead of conjunctively (the default). An
+                example of such a search is shown in the follwoing
+                screenshots:<a
+                  href="#ftn.idm45697241121552"
+                  class="footnote"
+                  id="idm45697241121552"
+                  ><sup class="footnote">[9]</sup></a
+                >
+              </dd>
+            </dl>
+          </div>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-search-or.png"
+                align="middle"
+                alt="A disjunctive Annotald search"
+              />
+            </div>
+          </div>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-search-or-result.png"
+                align="middle"
+                alt="Results of a disjunctive Annotald search"
+              />
+            </div>
+          </div>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt><span class="term"> Deep (“D”) </span></dt>
+              <dd>
+                This creates a deep search node as a daughter of the node from
+                which it is clicked. By default, child search nodes require
+                direct daughterhood. The children of deep nodes, in contrast,
+                can match at any depth.
+              </dd>
+              <dt><span class="term"> Precedes (“&gt;”) </span></dt>
+              <dd>
+                This creates a precedes node as a sister of the node from which
+                it is clicked. By default, as mentioned above (and illustrated
+                in the screenshots), the sisterhood relation among search nodes
+                in interpreted without regard to directionality. Precedes nodes,
+                on the other hand, impose a precedence relation on their
+                daughter (whih is not in fact interpreted as a daughter, but
+                rather as a sister, of the original node.)
+              </dd>
+              <dt><span class="term"> Remove (“-”) </span></dt>
+              <dd>
+                This removes the node from which it is clicked. Any daughters of
+                this node are promoted to the node's parent; if the node has no
+                daughters it simply disappears.
+              </dd>
+              <dt><span class="term"> Add daughter (“+”) </span></dt>
+              <dd>
+                This adds a daughter search node to the node from which it is
+                clicked. The defaultinterpretation is direct daughterhood, which
+                can be changed by using a deep node, as already mentioned.
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="collapsing-nodes"></a>5.5. Collapsing nodes
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            The hierarchy of a node may be collapsed, for example to facilitate
+            the editing of the clause-level structure in the presence of large
+            amounts of structure inside NPs. When collapsed, a node's text
+            (including traces and empty categories) is displayed in the node,
+            separated by spaces. The syntactic labels inside the node are not
+            displayed. The usual blue and grey colors of the node's border are
+            replaced by purple, to indicate that collapsing is in effect.
+          </p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both">
+                <a id="advanced-features"></a>6. Advanced features
+              </h2>
+            </div>
+          </div>
+        </div>
+        <p>
+          In this section, some advanced features of Annotald are described.
+          These are not required to use Annotald (and in fact are deactivated by
+          default). However, for proficient users, their use may make possible
+          grater annotation efficiency and accuracy. Generally speaking, all
+          features in this section require some faculty with programming, in the
+          broad sense of using an abstract language to give instructions to a
+          computer.
+        </p>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="tagset-validate"></a>6.1. Tagset validation
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            By default, Annotald does not contain a mechanism to ensure that
+            tags created through editing conform to any sort of schema. At the
+            same time, there are various parts of Annotald's code that would
+            benefit from knowing whether a node corresponds to a leaf or not,
+            which is not always a purely structural decision (for example, a
+            node of the form <span class="corpustext">(NP-SBJ *pro*)</span> is
+            structurally a leaf, but in fact corresponds to a phrasal node, an
+            NP). Supplying this information to Annotald improves its
+            functioning, as well as preventing nonsense tags from being added to
+            the corpus during editing.
+          </p>
+          <p>
+            You can do this however you like – the only requirement that
+            Annotald imposes is that you assign to the configuration variables
+            <code class="literal">testValidLeafLabel</code> and
+            <code class="literal">testValidPhraseLabel</code> Javascript
+            functions that return true iff its argument is a valid label for a
+            leaf node or phrase node (respectively). One useful way of doing
+            this is described below.
+          </p>
+          <p>
+            It is possible to write a grammar to validate tags. Just as the
+            grammar of a natrual language accepts only those sentences which are
+            well-formed in that language, this grammar should accept only the
+            tags which are valid in a particular corpus. In particular, this
+            manual will describe how to use the
+            <a class="ulink" href="http://waxeye.org/" target="_top"
+              >Waxeye Parser Generator</a
+            >
+            to do so. In addition to being Free Software, this program uses a
+            relatively intuitive notation for its grammars. Additionally, it can
+            generate grammars not only in Javascript, but also in Python and
+            several other computer languages. This allows the same grammar
+            specification to be used in Annotald as well as in a validation
+            script for the corpus.
+          </p>
+          <p>
+            Grammars written in waxeys consist of a series of rules. The first
+            rule in the file constitutes the grammar – it must match. A rule has
+            the form <code class="literal">name &lt;- content</code>. The name
+            of a rule can consist of letters, numbers, and underscores. The
+            content of the rule can be as follows:
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc">
+              <li class="listitem">
+                <code class="literal">'string'</code> matches string in the
+                input, literally
+              </li>
+              <li class="listitem">
+                the name of another rule forces that rule to match
+              </li>
+              <li class="listitem">
+                <code class="literal">(...)</code> is a grouping construct
+              </li>
+              <li class="listitem">
+                <code class="literal">A B</code> matches A followed by B
+              </li>
+              <li class="listitem">
+                <code class="literal">A | B</code> matches either A or B
+              </li>
+              <li class="listitem">
+                <code class="literal">?A</code> matches maybe A – that is, if A
+                matches, the parser's input advances over it, but if A does not
+                match, the parser does not fail.
+              </li>
+              <li class="listitem">
+                <code class="literal">*A</code> matches 0 or more A
+              </li>
+              <li class="listitem">
+                <code class="literal">+A</code> matches 1 or more A
+              </li>
+            </ul>
+          </div>
+          <p>
+            Comments are enclosed in <code class="literal">/* ... */</code>.
+          </p>
+          <p>
+            Using these rules, it is possible to build up a grammar. As an
+            illustration, here is a grammar that matches
+            <a
+              class="ulink"
+              href="http://www.ling.upenn.edu/histcorpora/annotation/labels.htm#pos_tags"
+              target="_top"
+              >the tagset from the PPCEME</a
+            >
+            (without, for simplicity, the numbered word splitting).
+          </p>
+          <pre class="screen">word_tag &lt;-
+/* <a id="CO1-1"></a><span><img src="images/icons/callouts/1.png" alt="1" border="0" /></span> */
+ ( verbal | nominal | punct | other_word | fn_cat )
+
+nominal &lt;-
+/*       <a id="CO1-2"></a><span><img src="images/icons/callouts/2.png" alt="2" border="0" /></span>      <a id="CO1-3"></a><span><img src="images/icons/callouts/3.png" alt="3" border="0" /></span> */
+ ('NUM' ?'$') | ('N' ?'PR' ?'S' ?'$') | ('ADJ' ?('R' | 'S')) | 'D' |
+ ('PRO' ?'$') | ('Q' ?('R' | 'S' | '$'))
+
+verbal &lt;-
+ verb | verb_modifier
+
+verb &lt;-
+/* <a id="CO1-4"></a><span><img src="images/icons/callouts/4.png" alt="4" border="0" /></span> */
+ (('DO' | 'BE' | 'HV' | 'VB') ?('D' | 'P' | 'N' | 'I')) |
+ (('D' | 'B' | 'H' | 'V') 'A' ('G' | 'N')) |
+ ('MD' ?'0')
+
+verb_modifier &lt;-
+ ('ADV' ?('R' | 'S')) | 'NEG'
+
+punct &lt;-
+/* <a id="CO1-5"></a><span><img src="images/icons/callouts/5.png" alt="5" border="0" /></span> */
+ '\'' | '"' |',' | '.' | '`'
+
+fn_cat &lt;-
+ 'C' | 'CONJ' | 'P' | ('W' ('ADV' | 'D' | ('PRO' ?'$'))) |
+ 'INTJ' | 'ALSO' | 'ELSE' | 'EX' | 'FP' | 'RP' | 'LB' | 'LS' |
+ 'MAN' | 'ONE' | ('OTHER' ?'S' ?'$') | 'SUCH' | 'TO' | 'WARD'
+
+other_word &lt;-
+ 'CODE' | 'FW' | 'X' | 'FP' | 'META'</pre>
+          <div class="calloutlist">
+            <table border="0" summary="Callout list">
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO1-1"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/1.png"
+                          alt="1"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    For simplicity, the first rule is divided into a disjunction
+                    of different sub-rules.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO1-2"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/2.png"
+                          alt="2"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    This is a very simple example of a rule – the
+                    <span class="corpustext">NUM</span> tag may be followed by
+                    an optional <span class="corpustext">$</span>, indicating
+                    that it is possessive
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO1-3"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/3.png"
+                          alt="3"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    A more complicated rule. A noun
+                    <span class="corpustext">N</span> may be proper
+                    <span class="corpustext">PR</span>, plural
+                    <span class="corpustext">S</span>, and/or possessive
+                    <span class="corpustext">$</span>. Any subest of these
+                    modifiers may appear.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO1-4"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/4.png"
+                          alt="4"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    The most complicated rule in this grammar. A verbal tag
+                    consists of an indicator of the verb's lexical identity
+                    (<span class="emphasis"><em>do</em></span
+                    >, <span class="emphasis"><em>be</em></span
+                    >, <span class="emphasis"><em>have</em></span
+                    >, or other), followed by an indicator of its form. Present
+                    <span class="corpustext">P</span>, past
+                    <span class="corpustext">D</span>, past participle
+                    <span class="corpustext">N</span>, and imperative
+                    <span class="corpustext">I</span> follow a two-letter verb
+                    code, giving rise to forms like
+                    <span class="corpustext">DOD</span>,
+                    <span class="corpustext">BEP</span>, etc. Present participle
+                    <span class="corpustext">G</span> and passive participle
+                    <span class="corpustext">N</span> follow a one-letter code
+                    followed by <span class="corpustext">A</span>, giving rise
+                    to <span class="corpustext">VAN</span>,
+                    <span class="corpustext">HAG</span>, etc.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO1-5"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/5.png"
+                          alt="5"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    Because <code class="literal">'</code> is the quote
+                    character, to obtain a literal quote character it must be
+                    backslash-escaped.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="externalvalidation"></a>6.2. External validation
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Annotald includes a feature that allows the user to interactively
+            submit the contents of a file to a separate program, and receive
+            feedback from that program. This system is (intentionally) very
+            powerful – the external program can be any Python function,<a
+              href="#ftn.idm45697241054656"
+              class="footnote"
+              id="idm45697241054656"
+              ><sup class="footnote">[10]</sup></a
+            >
+            and the feedback comes in the form of that function modifying the
+            file contents; these modified file contents replace the original
+            file in the Annotald interface. It is hoped that this flexibility
+            will facilitate a wide variety of automated workflows.
+          </p>
+          <div class="note" style="margin-left: 0; margin-right: 10%">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Note]" src="images/icons/note.png" />
+                </td>
+                <th align="left"></th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+                    This feature presently causes all undo history to be erased
+                    when the file is sent for validation.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>
+            One conventionalized way of using this facility is to perform
+            <span class="emphasis"><em>validation queries</em></span> on the
+            file – queries that will find anomalous structures, and flag them
+            for annotator attnetion.<a
+              href="#ftn.idm45697241051616"
+              class="footnote"
+              id="idm45697241051616"
+              ><sup class="footnote">[11]</sup></a
+            >
+            In this section, we will discuss setting up such a system, using
+            CorpusSearch queries.
+          </p>
+          <p>
+            The specification of validation queries involves customizing the
+            Python settings file. An annotated example of such a file is given
+            immediately below.
+          </p>
+          <pre class="programlisting">import os.path
+current_dir = os.path.dirname(os.path.abspath(__file__)) # <a id="CO2-1"></a><span><img src="images/icons/callouts/1.png" alt="1" border="0" /></span>
+
+from collections import OrderedDict # <a id="CO2-2"></a><span><img src="images/icons/callouts/2.png" alt="2" border="0" /></span>
+
+validators = OrderedDict([
+    ("Example 1", corpusSearchValidate(current_dir + "/example1.q")), # <a id="CO2-3"></a><span><img src="images/icons/callouts/3.png" alt="3" border="0" /></span>
+    ("Example 2", corpusSearchValidate(current_dir + "/example2.q"))
+])</pre>
+          <div class="calloutlist">
+            <table border="0" summary="Callout list">
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO2-1"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/1.png"
+                          alt="1"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    An easy way to find in Python other necessary files (in this
+                    case, CorpusSearch queries) is by locating them with
+                    relation to the Python file itself. This line assigns the
+                    directory where the script is located (as a string) to the
+                    variable <code class="literal">current_dir</code>. Thus,
+                    this code assumes that in the same directory as the
+                    <code class="literal">settings.py</code> file, there are two
+                    files named <code class="literal">example1.q</code> and
+                    <code class="literal">example2.q</code> containing relevant
+                    CorpusSearch queries.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO2-2"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/2.png"
+                          alt="2"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    The format of the
+                    <code class="literal">validators</code> variable is a
+                    dictionary – a data structure that associates keys (in this
+                    case, human-readable names of validators) with values
+                    (validation functions). The default dictionary
+                    implementation in Python does not preserve the order of the
+                    key-value pairs it stores. This line allows us to use an
+                    alternative implementation that does preserve this order.
+                    This means that the order which we specify validators in
+                    this file will be the order that they appear in Annotald's
+                    dropdown menu.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO2-3"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/3.png"
+                          alt="3"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    We create an
+                    <code class="literal">OrderedDict</code> object, and assign
+                    it to the <code class="literal">validators</code> variable.
+                    Each entry in the dictionary is given as a pair of
+                    <code class="literal">(key, value)</code>.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>
+            The <code class="literal">corpusSearchValidate</code> function takes
+            one argument, giving the path to a CorpusSearch query file. It then
+            arranges to run this query on the file, and return the modified
+            output. The CorpusSearch program is distributed with Annotald;
+            however, this facility relies on a Java executable being installed
+            on your machine. You can test this by opening a command prompt and
+            typing <code class="literal">java</code> followed by a carriage
+            return. You should see a usage message from the java program; if you
+            instead receive an error message the java program is not installed
+            and/or accessible.
+          </p>
+          <p>
+            By convention, the validator should add the
+            <span class="corpustext">-FLAG</span> dash tag to trees which are
+            anomalous. The “Next Error” button in the Annotald interface will
+            allow you to jump to the next flagged tree in the file. You can also
+            attach a keybinding to the
+            <code class="literal">nextValidationError</code> function, if you
+            would like to use the keyboard for this purpose. The program removes
+            any =-FLAG=s when the file is saved and when submitting it to the
+            validator.
+          </p>
+          <p>
+            When validators are specified, the Annotald interface shows the
+            “Validate” and “Next Error” buttons as well as the validator
+            selection menu in the “Tools” section of the left-hand column, as
+            shown in the below image:
+          </p>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-validate.png"
+                align="middle"
+                alt="Validation interface in Annotald"
+              />
+            </div>
+          </div>
+          <p>
+            The example given above assumes that two CorpusSearch query
+            functions are present in the same directory as the Python file. For
+            more information about writing CorpusSearch queries, consult the
+            <a
+              class="ulink"
+              href="http://corpussearch.sourceforge.net/CS-manual/Contents.html"
+              target="_top"
+              >user's guide</a
+            >, esepcially (for present purposes) the
+            <a
+              class="ulink"
+              href="http://corpussearch.sourceforge.net/CS-manual/Revise.html"
+              target="_top"
+              >section on automated corpus revision</a
+            >
+            which tells how to make changes to the input. As an example, the
+            following CorpusSearch revision query adds a
+            <span class="corpustext">-FLAG</span> to all NPs:
+          </p>
+          <pre class="screen">
+node: $ROOT
+
+query: {1}NP* exists
+
+append_label{1}: -FLAG</pre
+          >
+          <p>If run in the Annotald interface, it produces this result:</p>
+          <div class="informalfigure">
+            <div class="mediaobject" align="center">
+              <img
+                src="images/annotald-validate-results.png"
+                align="middle"
+                alt="Validation results in the Annotald interface"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a id="customjs"></a>6.3. Custom Javascript
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Because the <code class="literal">settings.js</code> file is
+            interpreted as unrestricted Javascript in the Annotald UI, it can be
+            the vehicle for powerful customizations. Annotald includes the
+            <a class="ulink" href="http://jquery.com/" target="_top">jQuery</a>
+            and
+            <a class="ulink" href="http://underscorejs.org/" target="_top"
+              >Underscore.js</a
+            >
+            libraries, meaning that you can use functions from either of these
+            libraries in customization code. The details of these libraries are
+            beyond the scope of the current document. As an overview, Annotald
+            maps nodes in a parsed file to nodes in the DOM. Using jQuery's DOM
+            manipulation functions (which are what Annotald itself uses
+            internally), it is possible to create custom functions that are
+            powerful and mnemonic.
+          </p>
+          <p>
+            For more information on Annotald's API, consult
+            <a
+              class="ulink"
+              href="http://annotald.github.com/api-doc/global.html"
+              target="_top"
+              >the API documentation</a
+            >.
+          </p>
+          <p>
+            What follows is an annotated example of a custom function. It forms
+            a <span class="corpustext">CONJP</span> semi-automatically.
+            Specifically:
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc">
+              <li class="listitem">
+                if two nodes are selected, create a word-level conjunction
+                spanning the selection; give it the label of the first selected
+                node
+              </li>
+              <li class="listitem">
+                if one node is selected, look for a
+                <span class="corpustext">CONJ</span> daughter of the selected
+                node. The nodes before the
+                <span class="corpustext">CONJ</span> and after it are wrapped in
+                an extra layer of structure; a
+                <span class="corpustext">CONJP</span> is inserted dominating the
+                <span class="corpustext">CONJ</span>
+                and the second conjunct
+              </li>
+            </ul>
+          </div>
+          <pre class="programlisting">function autoConjoin() {
+    if (!startnode) return; // <a id="CO3-1"></a><span><img src="images/icons/callouts/1.png" alt="1" border="0" /></span>
+    if (!endnode) { // <a id="CO3-2"></a><span><img src="images/icons/callouts/2.png" alt="2" border="0" /></span>
+        var savestartnode = startnode;
+        var selnode = $(startnode); // <a id="CO3-3"></a><span><img src="images/icons/callouts/3.png" alt="3" border="0" /></span>
+        var label = getLabel(selnode);
+        if (!label.startsWith("IP") &amp;&amp;
+            !label.startsWith("CP")) { // <a id="CO3-4"></a><span><img src="images/icons/callouts/4.png" alt="4" border="0" /></span>
+            label = label.split("-")[0];
+        }
+        var conjnode = selnode.children(".CONJ").first(); // <a id="CO3-5"></a><span><img src="images/icons/callouts/5.png" alt="5" border="0" /></span>
+        if (conjnode) {
+            startnode = selnode.children().first().get(0); // <a id="CO3-6"></a><span><img src="images/icons/callouts/6.png" alt="6" border="0" /></span>
+            endnode = conjnode.prev().get(0);
+            makeNode(label);
+            startnode = conjnode.get(0);
+            endnode = selnode.children().last().get(0);
+            makeNode("CONJP");
+            var conjpnode = $(startnode);
+            startnode = conjpnode.children().get(1);
+            endnode = conjpnode.children().last().get(0);
+            makeNode(label);
+            startnode = savestartnode; // <a id="CO3-7"></a><span><img src="images/icons/callouts/7.png" alt="7" border="0" /></span>
+            endnode = undefined;
+            updateSelection();
+        }
+    } else { // <a id="CO3-8"></a><span><img src="images/icons/callouts/8.png" alt="8" border="0" /></span>
+        var s = $(startnode);
+        var l = getLabel(s);
+        if (s.nextUntil(endnode).filter(".CONJ").size() &gt; 0 &amp;&amp; // <a id="CO3-9"></a><span><img src="images/icons/callouts/9.png" alt="9" border="0" /></span>
+            s.end().children().filter(function () {
+                return !guessLeafNode($(this));
+            }).size() == 0) {
+            makeNode(l);
+        }
+    }
+}</pre>
+          <div class="calloutlist">
+            <table border="0" summary="Callout list">
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO3-1"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/1.png"
+                          alt="1"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>Exit the function if nothing is selected.</p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO3-2"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/2.png"
+                          alt="2"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    If <code class="literal">endnode</code> is
+                    <code class="literal">null</code>, there is only one node
+                    selected.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO3-3"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/3.png"
+                          alt="3"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    The <code class="literal">startnode</code> and
+                    <code class="literal">endnode</code> variables hold “native”
+                    nodes. The <code class="literal">$()</code> function “wraps”
+                    them in the jQuery library, allowing jQuery functions to be
+                    used.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO3-4"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/4.png"
+                          alt="4"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    IP and CP nodes should keep their dash tags when embedded
+                    inside conjunction. Thus we have (e.g. in the PPCEME)
+                    <span class="corpustext">(NP-SBJ (NP …) (CONJP …))</span>
+                    but
+                    <span class="corpustext"
+                      >(IP-INF (IP-INF …) (CONJP …))</span
+                    >
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO3-5"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/5.png"
+                          alt="5"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    jQuery syntax is very intuitive; this line gets the first
+                    child of the <code class="literal">selnode</code> (selected
+                    node)
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO3-6"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/6.png"
+                          alt="6"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    Appending <code class="literal">.get(0)</code> to a jQuery
+                    object “unwraps” it, transforming it back to a native type
+                    appropriate for storing in the
+                    <code class="literal">startnode</code>
+                    variable.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO3-7"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/7.png"
+                          alt="7"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    Restore the user's selection before exiting the function
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO3-8"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/8.png"
+                          alt="8"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    This is the branch that will be taken if two nodes are
+                    selected
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="5%" valign="top" align="left">
+                  <p>
+                    <a href="#CO3-9"
+                      ><span
+                        ><img
+                          src="images/icons/callouts/9.png"
+                          alt="9"
+                          border="0" /></span
+                    ></a>
+                  </p>
+                </td>
+                <td valign="top" align="left">
+                  <p>
+                    For word level conjunction, the selection must span over a
+                    <span class="corpustext">CONJ</span>
+                    node, and each member of the selection must be a leaf node.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both">
+                <a id="_auxiliary_commands"></a>7. Auxiliary commands
+              </h2>
+            </div>
+          </div>
+        </div>
+        <p>
+          Annotald comes with a command-line tool that performs some auxiliary
+          functions. It is invoked at the command line by typing
+          <code class="literal">annotald-aux</code>, followed by the name of an
+          auxiliary command, followed by that command's arguments. Unless
+          otherwise indicated, commands that operate on a file modify the file
+          in place. If you want to preserve an unmodified version of the file,
+          make sure to make a copy before invoking
+          <code class="literal">annotald-aux</code>.<a
+            href="#ftn.idm45697240971136"
+            class="footnote"
+            id="idm45697240971136"
+            ><sup class="footnote">[12]</sup></a
+          >
+          The available commands are:
+        </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+                <code class="literal">convert</code>
+              </span>
+            </dt>
+            <dd>
+              Convert a file from another format into Annotald' output format.
+              Currently, this command supports converting from CorpusSearch
+              output files, via the <code class="literal">-o</code> option
+              followed by a filename argument. Supplying this option will strip
+              CorpusSearch (and emacs parser-mode) comments from the file. The
+              file will additionally have its trees reindented. You can have
+              reindentation alone by invoking the command with only a filename
+              argument (no <code class="literal">-o</code>).
+            </dd>
+            <dt>
+              <span class="term">
+                <code class="literal">check-trees</code>
+              </span>
+            </dt>
+            <dd>
+              Check each tree in the file to make sure it is valid. When working
+              with non-structural editing methods(such as hand-editing or
+              regular expressions), it is somewhat common for a parenthesis to
+              go astray, leading to an invalid tree. This mode will help you
+              find such mistakes. It does not modify its argument file.
+            </dd>
+            <dt>
+              <span class="term">
+                <code class="literal">csv-log</code> <a id="csv-log"></a>
+              </span>
+            </dt>
+            <dd>
+              Convert the
+              <a class="link" href="#timelog" title="5.2. Event log"
+                >Annotald event log</a
+              >
+              to CSV format, appropriate for analysis in an external program.
+            </dd>
+            <dt>
+              <span class="term">
+                <code class="literal">hash-file</code>
+              </span>
+            </dt>
+            <dd>
+              <p class="simpara">
+                This command adds a hash to the file. A hash is a “fingerprint”
+                of the file's text. Annotald will not allow you to change the
+                text of the corpus, and if a file has a hash, it will verify, on
+                every save, that the corpus text has not changed. Hashing files
+                is good protection against possible Annotald bugs, as well as
+                against modifications to the file's text arising from other
+                editing methods.
+              </p>
+              <p class="simpara">
+                Annotald contains a built-in feature for
+                <a class="link" href="#splitWord">splitting words</a>, and
+                splits will not be counted as changes to the text. However, if
+                you edit the text by hand (for example to join words, which
+                Annotald does not support natively), you will need to re-hash
+                the file.
+              </p>
+            </dd>
+            <dt>
+              <span class="term">
+                <code class="literal">rewrite-indices</code>
+              </span>
+            </dt>
+            <dd>
+              <p class="simpara">
+                In editing trees, the movement indices can become disjointed.
+                For example, splitting a sentence in two can result in a
+                sentence whose indices begin at a number larger than one. Using
+                this command sequentially renumbers all indices in all trees,
+                beginning with 1 for each tree and proceeding in order.
+              </p>
+              <p class="simpara">
+                Annotald will additionally rewrite indices automatically on
+                save, unless this feature is
+                <a class="link" href="#rewriteindices">disabled</a> in the
+                <code class="literal">settings.py</code> file.
+              </p>
+            </dd>
+            <dt>
+              <span class="term">
+                <code class="literal">cat-settings-js</code>,
+                <code class="literal">cat-settings-py</code>
+              </span>
+            </dt>
+            <dd>
+              These commands write a copy of the default Javascript or Python
+              settings files to standard output.
+            </dd>
+            <dt>
+              <span class="term">
+                <code class="literal">reindent</code>
+              </span>
+            </dt>
+            <dd>
+              Passed the name of a file as an argument, this command will
+              reindent the trees in the file so that sisters on the same level
+              have the same amount of preceding horizontal whitespace.
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="appendix">
+        <h2 class="title" style="clear: both">
+          <a id="_annotald_file_format"></a>A. Annotald file format
+        </h2>
+        <p>
+          Annotald understands files in the Penn treebank format. The following
+          is a description of the file format, as implemented by Annotald. In
+          this description, the word “must” should be interpreted to mean that
+          Annotald's behavior on files not fulfilling the given restriction is
+          undefined, and quite possibly buggy. “Should” introduces prescriptions
+          that, while best practices for ensuring full stability, may not be
+          necessary for Annotald to function properly.
+        </p>
+        <p>
+          Annotald's input files must consist of UTF-8 encoded text. (If you do
+          not use any diacritics or non-English letters, UTF-8 encoding is
+          equivalent to using ASCII, which is the default text format on all
+          platforms.) They should have the file extension
+          <code class="literal">.psd</code>. The contents of the file must be a
+          list of trees (defined below), each separated from the next by two
+          newline characters. (If you have the option, choose “Unix” line
+          endings, as opposed to “Mac” or “Windows” when saving the files in a
+          text editor).
+        </p>
+        <p>
+          A tree must contain a balanced number of opening parentheses
+          <span class="corpustext">(</span> and closing parentheses
+          <span class="corpustext">)</span>. The outermost set of parentheses
+          encloses:
+        </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc">
+            <li class="listitem">the tree itself</li>
+            <li class="listitem">an optional ID node</li>
+          </ul>
+        </div>
+        <p>Uniquely, the outermost set of parentheses has no label.</p>
+        <p>
+          The ID, if present, must be a leaf node, with label
+          <span class="corpustext">ID</span> and text as described below.
+        </p>
+        <p>
+          The tree must be any node. A node must be either a leaf node or a
+          branching node. A leaf node must have the format
+          <span class="corpustext">(LABEL text)</span>. The label should consist
+          of capital letters of the English alphabet, A–Z. Often, the label is a
+          word's POS tag. The text can be an arbitrary non-empty string, except
+          it must not contain <span class="corpustext">(</span> or
+          <span class="corpustext">)</span> characters.
+        </p>
+        <p>
+          A branching node must have the following format:
+          <span class="corpustext">(LABEL &lt;node&gt; …)</span>. The label must
+          be formatted as above. The remainder of the content of a branching
+          node must be a sequence of one or more nodes, separated by arbitrary
+          whitespace.
+        </p>
+        <p>
+          Annotald imposes a particular indentation scheme on files it writes,
+          but whitespace generally speaking does not affect its interpretation
+          of input files, except that trees must be separated by exactly two
+          newlines.
+        </p>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title">
+                  <a
+                    id="_mapping_from_source_document_to_corpus_representation"
+                  ></a
+                  >A.1. Mapping from source document to corpus representation
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            In general, the text of leaf nodes in the file should correspond as
+            closely as possible to the text of the original document being
+            parsed. This maximizes the reproducibility and perspicuity of the
+            parsing process in several ways:
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc">
+              <li class="listitem">
+                Any passages with questionable text can be cross-checked with
+                the original source document.
+              </li>
+              <li class="listitem">
+                The original text provides a base against which different
+                parsing standards can be compared
+              </li>
+              <li class="listitem">
+                Any interpolation done by the annotator is made explicit, as
+                described below.
+              </li>
+            </ul>
+          </div>
+          <p>
+            With the following exceptions, the text of every node should
+            represent an orthographic word (for the rest of this section, a
+            “word”) from the original document.
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc">
+              <li class="listitem">
+                Sometimes, a word must be split so that its parts can be given
+                different annotation. Annotald contains
+                <a class="link" href="#splitWord"
+                  >a facility for splitting words in a consistent and reversible
+                  way</a
+                >.
+              </li>
+              <li class="listitem">
+                Sometimes, it is beneficial to insert comments into the text.
+                Annotald reserves the <span class="corpustext">CODE</span> label
+                for leaf nodes whose text should be interpreted as a comment.
+                There is a
+                <a class="link" href="#displayRename"
+                  >facility for editing and distinguishing different comments</a
+                >.
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  <a id="emptyelements"></a> Most annotation schemes include
+                  some kinds of traces and empty elements. The rules for these
+                  are:
+                </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" style="list-style-type: circle">
+                    <li class="listitem">
+                      Any node with the text exactly
+                      <span class="corpustext">0</span> will be considered an
+                      empty operator. If the source text contains “0” as an
+                      orthographic word, your annotation scheme should specify a
+                      canonical replacement (such as
+                      <span class="corpustext">&lt;zero&gt;</span>).
+                    </li>
+                    <li class="listitem">
+                      <p class="simpara">
+                        Any node with the following text as the beginning of its
+                        text string will be considered a trace: [horizontal]
+                      </p>
+                      <div class="variablelist">
+                        <dl class="variablelist">
+                          <dt>
+                            <span class="term">
+                              <code class="literal">*</code>
+                            </span>
+                          </dt>
+                          <dd>An A-movement trace</dd>
+                          <dt>
+                            <span class="term">
+                              <code class="literal">*T*</code>
+                            </span>
+                          </dt>
+                          <dd>An A-bar movement trace</dd>
+                          <dt>
+                            <span class="term">
+                              <code class="literal">*CL*</code>
+                            </span>
+                          </dt>
+                          <dd>A clitic movement trace</dd>
+                          <dt>
+                            <span class="term">
+                              <code class="literal">*ICH*</code>
+                            </span>
+                          </dt>
+                          <dd>
+                            A trace of rightward movement or extraposition
+                            (mnemonic: Interpret Constituent Here)
+                          </dd>
+                        </dl>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footnotes">
+        <br />
+        <hr style="width: 100; text-align: left; margin-left: 0" />
+        <div id="ftn.idm45697242942048" class="footnote">
+          <p>
+            <a href="#idm45697242942048" class="simpara"
+              ><sup class="simpara">[1] </sup></a
+            >There are two meanings of the term “Free Software.” The first
+            refers to the software being provided free of charge. The second
+            means that the software's source code is freely available to its
+            users for them to inspect, modify, and reuse. The second of these
+            definitions is the most important to ensuring scientific openness;
+            as it happens Annotald and its dependencies fulfill both
+            definitions. For more information, consult
+            <a
+              class="ulink"
+              href="https://www.gnu.org/philosophy/free-sw.html"
+              target="_top"
+              >this document from the Free Software Foundation</a
+            >.
+          </p>
+        </div>
+        <div id="ftn.idm45697241525008" class="footnote">
+          <p>
+            <a href="#idm45697241525008" class="simpara"
+              ><sup class="simpara">[2] </sup></a
+            >You may notice subtle differences in some screenshots, reflecting
+            ways in which the Annotald UI has evolved over its development. It
+            is hoped that these will not detract from the points being
+            explicated.
+          </p>
+        </div>
+        <div id="ftn.idm45697241484032" class="footnote">
+          <p>
+            <a href="#idm45697241484032" class="simpara"
+              ><sup class="simpara">[3] </sup></a
+            >Left handed users may wish to use the left hand for mousing and the
+            right hand for the keyboard, but the principle of using one hand
+            exclusively for each operation remains the same. Additionally, the
+            default configuration will have to be adjusted for users of
+            non-English keyboard layouts.
+          </p>
+        </div>
+        <div id="ftn.idm45697241431680" class="footnote">
+          <p>
+            <a href="#idm45697241431680" class="simpara"
+              ><sup class="simpara">[4] </sup></a
+            >For a classic discussion of this phenomenon in Spanish and
+            Portugese of Latin America, consult Guy, Gregory. 1981. “Parallel
+            variability in American dialects of Spanish and Portuguese.”
+            <span class="emphasis"><em>Variation omnibus</em></span
+            >, ed. by David Sankoff and Henrietta Cedergren, 85-95. Alberta:
+            Carbondale and Edmonton
+          </p>
+        </div>
+        <div id="ftn.idm45697241331216" class="footnote">
+          <p>
+            <a href="#idm45697241331216" class="simpara"
+              ><sup class="simpara">[5] </sup></a
+            >To see an exact listing of the tags included in each category
+            described below, you should consult the configuration file itself.
+          </p>
+        </div>
+        <div id="ftn.idm45697241191696" class="footnote">
+          <p>
+            <a href="#idm45697241191696" class="simpara"
+              ><sup class="simpara">[6] </sup></a
+            >The screenshot is somewhat cramped, owing to the artificially small
+            size of the window. When working with the interface at full-screen
+            size, the interface will be less crowded.
+          </p>
+        </div>
+        <div id="ftn.idm45697241186016" class="footnote">
+          <p>
+            <a href="#idm45697241186016" class="simpara"
+              ><sup class="simpara">[7] </sup></a
+            >This file is in the format used by the
+            <code class="literal">shelve</code> Python library. Interested users
+            may consult
+            <a
+              class="ulink"
+              href="http://docs.python.org/library/shelve.html"
+              target="_top"
+              >the module's documentation</a
+            >
+            and Annotald's source code if they desire to create custom code to
+            analyze the log.
+          </p>
+        </div>
+        <div id="ftn.idm45697241156496" class="footnote">
+          <p>
+            <a href="#idm45697241156496" class="simpara"
+              ><sup class="simpara">[8] </sup></a
+            >The YCOE does not follow these guidelines. Case is marked on
+            phrasal nodes with dash tags (as a substitute for grammatical role
+            marking: <span class="corpustext">SBJ</span> etc.), and on words
+            with a caret: <span class="corpustext">^N</span> for nominative etc.
+            The Penn parsed corpora of Middle English and later time periods
+            indicate genitive with a <span class="corpustext">$</span> which is
+            directly concatenated with a leaf's label, but this is not the kind
+            of case-marking that this Annotald feature addresses. The IcePaHC
+            corpus does obey these conditions (unsurprisingly, since Annotald
+            comes from that project), as does the Penn Parsed Corpus of
+            Historical Greek.
+          </p>
+        </div>
+        <div id="ftn.idm45697241121552" class="footnote">
+          <p>
+            <a href="#idm45697241121552" class="simpara"
+              ><sup class="simpara">[9] </sup></a
+            >Note that the results are the same as the previously illustrated
+            sisterhood search, though the queries are distinct.
+          </p>
+        </div>
+        <div id="ftn.idm45697241054656" class="footnote">
+          <p>
+            <a href="#idm45697241054656" class="simpara"
+              ><sup class="simpara">[10] </sup></a
+            >Which in turn may invoke any program on the user's computer
+          </p>
+        </div>
+        <div id="ftn.idm45697241051616" class="footnote">
+          <p>
+            <a href="#idm45697241051616" class="simpara"
+              ><sup class="simpara">[11] </sup></a
+            >This idea stems from discussions with Beatrice Santorini about how
+            her parsing methodology.
+          </p>
+        </div>
+        <div id="ftn.idm45697240971136" class="footnote">
+          <p>
+            <a href="#idm45697240971136" class="simpara"
+              ><sup class="simpara">[12] </sup></a
+            >You can also use another means of recording the prior state of the
+            file, of course, such as checking it into a version control system.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
