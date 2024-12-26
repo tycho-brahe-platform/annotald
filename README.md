@@ -41,4 +41,4 @@ Annotald development has been funded by the following funding sources:
 - The research funds of [Anthony
   Kroch](http://www.ling.upenn.edu/~kroch/) at the University of
   Pennsylvania.
-- Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN).
+- Fondo per il Programma Nazionale di Ricerca e Progetti di Rilevante Interesse Nazionale (PRIN), within the project "La teoria parametrica testata sui corpora storici: misurazione del potere esplicativo e predittivo della teoria dei parametri sui corpora storici" under responsability of Prof. Emanuela Sanfelici from the Department of Literary Studies and Linguistics at the University of Padova.

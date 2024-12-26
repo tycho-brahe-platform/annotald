@@ -333,7 +333,6 @@
             id="idm45697242942048"
             ><sup class="footnote">[1]</sup></a
           >
-          https://gist.github.com/kupietools/2f9f085228d765da579f0f0702bec33c
         </p>
 
         <div class="section">
@@ -350,7 +349,7 @@
                 <a
                   class="ulink"
                   href="https://www.docker.com/products/docker-desktop/"
-                  target="_top"
+                  target="_blank"
                   >Docker Desktop</a
                 >
               </li>
@@ -361,7 +360,7 @@
                   <a
                     class="ulink"
                     href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/windows"
-                    target="_top"
+                    target="_blank"
                     >Github</a
                   >.
                 </p>
@@ -381,17 +380,15 @@
                   web browser will automatically open.
                 </p>
               </li>
-              <li class="listitem">
-                <p class="simpara">
-                  You can also run Annotald in command line by running the
-                  command:
-                </p>
-                <pre class="screen">
-                  annotald-cli.bat "path-to-folder" "filename.psd"
-                  </pre
-                >
-              </li>
             </ol>
+            <p>
+              Alternatively, you can also run Annotald in command line by
+              running the command:
+            </p>
+            <pre class="screen">
+annotald-cli.bat "path-to-folder" "filename.psd"
+</pre
+            >
           </div>
         </div>
         <div class="section">
@@ -400,16 +397,23 @@
               <a id="_installing_macos"></a>2.2. macOS Installation
             </h3>
           </div>
-          <p>These are the instructions to install Annotald on Windows:</p>
+          <p>These are the instructions to install Annotald on macOS:</p>
           <div class="orderedlist">
             <ol class="orderedlist" type="1">
               <li class="listitem">
-                Download and install the latest stable version for Windows of
+                Download and install the latest stable version for macOS of
                 <a
                   class="ulink"
                   href="https://www.docker.com/products/docker-desktop/"
-                  target="_top"
+                  target="_blank"
                   >Docker Desktop</a
+                >
+                <br />For macOS Big Sur (v. 11) or earlier, install version
+                <a
+                  href="https://desktop.docker.com/mac/main/amd64/117440/Docker.dmg"
+                  class="ulink"
+                  target="_blank"
+                  >4.22.0</a
                 >
               </li>
               <li class="listitem">
@@ -418,8 +422,8 @@
                   containing the installation and executable running files at
                   <a
                     class="ulink"
-                    href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/windows"
-                    target="_top"
+                    href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/macos"
+                    target="_blank"
                     >Github</a
                   >.
                 </p>
@@ -427,17 +431,30 @@
 
               <li class="listitem">
                 <p class="simpara">
-                  Double click the file install.bat. It will pull Annotald's
-                  Docker image from Docker Hub Server.
+                  Run the following commands to make the script files
+                  executable:
                 </p>
+                <pre class="screen">
+chmod +x install.sh
+chmod +x annotald.sh</pre
+                >
               </li>
 
               <li class="listitem">
                 <p class="simpara">
-                  Double click the file annotald.bat to run. It will open a
-                  dialog box to inform the file you want to edit. Your default
-                  web browser will automatically open.
+                  Run the script install.sh. It will pull Annotald's Docker
+                  image from Docker Hub Server.
                 </p>
+                <pre class="screen">./install.sh</pre>
+              </li>
+
+              <li class="listitem">
+                <p class="simpara">
+                  Run the script annotald.sh. It will open Finder to inform the
+                  file you want to edit. Your default web browser will
+                  automatically open.
+                </p>
+                <pre class="screen">./annotald.sh</pre>
               </li>
               <li class="listitem">
                 <p class="simpara">
@@ -445,8 +462,8 @@
                   command:
                 </p>
                 <pre class="screen">
-                  annotald-cli.bat "path-to-folder" "filename.psd"
-                  </pre
+annotald-cli.bat "path-to-folder" "filename.psd"
+</pre
                 >
               </li>
             </ol>
@@ -458,17 +475,40 @@
               <a id="_installing_linux"></a>2.3. Linux Installation
             </h3>
           </div>
-          <p>These are the instructions to install Annotald on Windows:</p>
+          <p>These are the instructions to install Annotald on Linux:</p>
           <div class="orderedlist">
             <ol class="orderedlist" type="1">
               <li class="listitem">
-                Download and install the latest stable version for Windows of
+                Download and install the latest stable version for Linux of
                 <a
                   class="ulink"
                   href="https://www.docker.com/products/docker-desktop/"
                   target="_top"
                   >Docker Desktop</a
                 >
+                <br />For macOS Big Sur (v. 11) or earlier, install version
+                <a
+                  href="https://desktop.docker.com/mac/main/amd64/117440/Docker.dmg"
+                  class="ulink"
+                  target="_top"
+                  >4.22.0</a
+                >
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  You might need to install Zenity if it isn't already. It is
+                  used to open the dialog to open the PSD file.
+                </p>
+                <pre class="screen">
+Ubuntu/Debian:
+sudo apt-get install zenity
+
+Fedora:
+sudo dnf install zenity
+
+Arch Linux:
+sudo pacman -S zenity
+                </pre>
               </li>
               <li class="listitem">
                 <p class="simpara">
@@ -476,7 +516,7 @@
                   containing the installation and executable running files at
                   <a
                     class="ulink"
-                    href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/windows"
+                    href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/macos"
                     target="_top"
                     >Github</a
                   >.
@@ -485,17 +525,30 @@
 
               <li class="listitem">
                 <p class="simpara">
-                  Double click the file install.bat. It will pull Annotald's
-                  Docker image from Docker Hub Server.
+                  Run the following commands to make the script files
+                  executable:
                 </p>
+                <pre class="screen">
+chmod +x install.sh
+chmod +x annotald.sh</pre
+                >
               </li>
 
               <li class="listitem">
                 <p class="simpara">
-                  Double click the file annotald.bat to run. It will open a
-                  dialog box to inform the file you want to edit. Your default
-                  web browser will automatically open.
+                  Run the script install.sh. It will pull Annotald's Docker
+                  image from Docker Hub Server.
                 </p>
+                <pre class="screen">./install.sh</pre>
+              </li>
+
+              <li class="listitem">
+                <p class="simpara">
+                  Run the script annotald.sh. It will open Finder to inform the
+                  file you want to edit. Your default web browser will
+                  automatically open.
+                </p>
+                <pre class="screen">./annotald.sh</pre>
               </li>
               <li class="listitem">
                 <p class="simpara">
@@ -503,8 +556,8 @@
                   command:
                 </p>
                 <pre class="screen">
-                  annotald-cli.bat "path-to-folder" "filename.psd"
-                  </pre
+annotald-cli.bat "path-to-folder" "filename.psd"
+</pre
                 >
               </li>
             </ol>
