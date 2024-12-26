@@ -4,22 +4,27 @@ Annotald is a program for annotating parsed corpora in the Penn Treebank
 format. For more information on the format (as instantiated by the Penn
 Parsed Corpora of Historical English), see [the documentation by
 Beatrice Santorini](http://www.ling.upenn.edu/hist-corpora/annotation/intro.htm#parsed_files).
+
 Annotald was originally written by [Anton Ingason](http://linguist.is/)
 as part of the [Icelandic Parsed Historical Corpus](<http://linguist.is/icelandic_treebank/Icelandic_Parsed_Historical_Corpus_(IcePaHC)>)
-project. It is currently being developed by him along with [Jana Beck](http://www.ling.upenn.edu/~janabeck/) and [Aaron Ecay](http://www.ling.upenn.edu/~ecay/).
+project.
+
+It is currently being developed by him along with [Jana Beck](http://www.ling.upenn.edu/~janabeck/) and [Aaron Ecay](http://www.ling.upenn.edu/~ecay/).
+
+The latest version has been updated for use with Docker and now supports installation on Windows, macOS, and Linux, by [Luiz Veronesi](https://github.com/luizveronesi).
 
 ## Obtaining Annotald
 
 The central location for Annotald development is [on
 Github](https://github.com/tycho-brahe-platform/annotald). You can view or download
 the program\'s source code from there. The latest release is available
-as a [Docker image](https://hub.docker.com/r/tychobrahe/annotald). In order to use it, you should install the [Docker Desktop](https://www.docker.com/products/docker-desktop/) and it is available for [Windows](), [Mac OS]() and [Linux]().
+as a [Docker image](https://hub.docker.com/r/tychobrahe/annotald). In order to use it, you should install the [Docker Desktop](https://www.docker.com/products/docker-desktop/) and it is available for [Windows](https://tycho-brahe-platform.github.io/annotald/guide.html#_installing_windows), [macOS](https://tycho-brahe-platform.github.io/annotald/guide.html#_installing_macos) and [Linux](https://tycho-brahe-platform.github.io/annotald/guide.html#_installing_linux).
 
 ## Using Annotald
 
-The [Annotald user\'s manual](http://annotald.github.com/user.html) can
+The [Annotald user\'s manual](https://tycho-brahe-platform.github.io/annotald/guide.html) can
 be found online. For developers, there is also [automatically generated
-API documentation](http://annotald.github.com/api-doc/global.html).
+API documentation](https://tycho-brahe-platform.github.io/annotald/api-docs.html).
 
 ## License
 
