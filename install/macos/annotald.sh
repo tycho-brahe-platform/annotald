@@ -1,16 +1,18 @@
 #!/bin/bash
 
 # Prompt the user for a file selection
-osascript <<EOF
+filePath=$(osascript <<EOF
 tell application "Finder"
     activate
     set psdFile to choose file with prompt "Select a PSD file to edit"
     set filePath to POSIX path of psdFile
 end tell
+return filePath
 EOF
+)
 
 # Run the Docker container with the selected file
-if [ "$filePath" != "" ]; then
+if [ -n "$filePath" ]; then
     folder=$(dirname "$filePath")
     filename=$(basename "$filePath")
     docker rm -f annotald || true
