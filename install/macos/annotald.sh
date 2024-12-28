@@ -15,8 +15,7 @@ EOF
 if [ -n "$filePath" ]; then
     folder=$(dirname "$filePath")
     filename=$(basename "$filePath")
-    docker rm -f annotald || true
-    docker run -it --rm --name annotald -p 8080:8080 -v "$folder":/data tychobrahe/annotald python bin/annotald /data/"$filename"
+    docker run --rm --name annotald -p 8080:8080 -v "$folder":/data tychobrahe/annotald python bin/annotald /data/"$filename"
     open http://localhost:8080
 else
     echo "No file selected. Exiting."

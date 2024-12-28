@@ -1,10 +1,10 @@
 body {
-  width: 800px;
-  font: serif;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  /* width: 800px; */
+  /* margin-left: auto !important;
+  margin-right: auto !important; */
   font-family: serif !important;
   text-align: justify;
+  margin: 0px 20vw !important;
 }
 
 .corpustext {
@@ -45,4 +45,16 @@ div.caution {
 
 a.footnote {
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0px 5vw !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  body {
+    margin: 0px 15vw !important;
+  }
 }

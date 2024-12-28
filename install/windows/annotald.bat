@@ -2,8 +2,6 @@
 @echo on
 setlocal EnableDelayedExpansion
 
-docker rm -f annotald || true
-
 if "%~1" equ "/?" (
 	echo Creates an input value window and output
 	echo   the result to console or assign it to variable

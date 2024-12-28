@@ -2675,6 +2675,7 @@ function quitServer(e, force) {
         if (
           window.confirm('Your file is saved. Do you want to close this tab?')
         ) {
+          window.location.href = 'about:blank';
           window.close();
         }
       });

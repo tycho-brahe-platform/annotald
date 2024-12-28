@@ -66,6 +66,13 @@
                   ></span
                 >
               </dt>
+              <dt>
+                <span class="section"
+                  ><a href="#_using_docker"
+                    >2.4. Using Docker (alternative)</a
+                  ></span
+                >
+              </dt>
             </dl>
           </dd>
           <dt>
@@ -334,7 +341,35 @@
             ><sup class="footnote">[1]</sup></a
           >
         </p>
-
+        <div class="note" style="margin-left: 0; margin-right: 10%">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/icons/note.png" />
+              </td>
+              <th align="left"></th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+                  If you are not able to install Annotald successfully, you can
+                  open an issue report at
+                  <a
+                    class="ulink"
+                    href="https://github.com/tycho-brahe-platform/annotald"
+                    target="_top"
+                    >Annotald's website</a
+                  >
+                  on GitHub. This will put you in touch with Annotald's
+                  developers, who will help you solve the problem. When creating
+                  issue reports, please try to describe your computer's
+                  configuration and the error message you received in terms that
+                  are as accurate and concise as possible.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="section">
           <div class="titlepage">
             <h3 class="title">
@@ -355,8 +390,8 @@
               </li>
               <li class="listitem">
                 <p class="simpara">
-                  Download the zip file (or the contents of the folder)
-                  containing the installation and executable running files at
+                  Download and extract the ZIP file or folder containing the
+                  installation and executable files from
                   <a
                     class="ulink"
                     href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/windows"
@@ -381,14 +416,6 @@
                 </p>
               </li>
             </ol>
-            <p>
-              Alternatively, you can also run Annotald in command line by
-              running the command:
-            </p>
-            <pre class="screen">
-annotald-cli.bat "path-to-folder" "filename.psd"
-</pre
-            >
           </div>
         </div>
         <div class="section">
@@ -418,8 +445,8 @@ annotald-cli.bat "path-to-folder" "filename.psd"
               </li>
               <li class="listitem">
                 <p class="simpara">
-                  Download the zip file (or the contents of the folder)
-                  containing the installation and executable running files at
+                  Download and extract the ZIP file or folder containing the
+                  installation and executable files from
                   <a
                     class="ulink"
                     href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/macos"
@@ -456,16 +483,6 @@ chmod +x annotald.sh</pre
                 </p>
                 <pre class="screen">./annotald.sh</pre>
               </li>
-              <li class="listitem">
-                <p class="simpara">
-                  You can also run Annotald in command line by running the
-                  command:
-                </p>
-                <pre class="screen">
-annotald-cli.bat "path-to-folder" "filename.psd"
-</pre
-                >
-              </li>
             </ol>
           </div>
         </div>
@@ -486,13 +503,6 @@ annotald-cli.bat "path-to-folder" "filename.psd"
                   target="_top"
                   >Docker Desktop</a
                 >
-                <br />For macOS Big Sur (v. 11) or earlier, install version
-                <a
-                  href="https://desktop.docker.com/mac/main/amd64/117440/Docker.dmg"
-                  class="ulink"
-                  target="_top"
-                  >4.22.0</a
-                >
               </li>
               <li class="listitem">
                 <p class="simpara">
@@ -512,12 +522,12 @@ sudo pacman -S zenity
               </li>
               <li class="listitem">
                 <p class="simpara">
-                  Download the zip file (or the contents of the folder)
-                  containing the installation and executable running files at
+                  Download and extract the ZIP file or folder containing the
+                  installation and executable files from
                   <a
                     class="ulink"
-                    href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/macos"
-                    target="_top"
+                    href="https://github.com/tycho-brahe-platform/annotald/tree/master/install/linux"
+                    target="_blank"
                     >Github</a
                   >.
                 </p>
@@ -544,53 +554,64 @@ chmod +x annotald.sh</pre
 
               <li class="listitem">
                 <p class="simpara">
-                  Run the script annotald.sh. It will open Finder to inform the
-                  file you want to edit. Your default web browser will
-                  automatically open.
+                  Run the script annotald.sh. It will open File Manager to
+                  inform the file you want to edit. Your default web browser
+                  will automatically open.
                 </p>
                 <pre class="screen">./annotald.sh</pre>
               </li>
               <li class="listitem">
                 <p class="simpara">
-                  You can also run Annotald in command line by running the
-                  command:
+                  Open the following url in your web browser.
                 </p>
-                <pre class="screen">
-annotald-cli.bat "path-to-folder" "filename.psd"
-</pre
-                >
+                <pre class="screen">http://localhost:8080</pre>
               </li>
             </ol>
           </div>
         </div>
-        <div class="note" style="margin-left: 0; margin-right: 10%">
-          <table border="0" summary="Note">
-            <tr>
-              <td rowspan="2" align="center" valign="top" width="25">
-                <img alt="[Note]" src="images/icons/note.png" />
-              </td>
-              <th align="left"></th>
-            </tr>
-            <tr>
-              <td align="left" valign="top">
-                <p>
-                  If you are not able to install Annotald successfully, you can
-                  open an issue report at
-                  <a
-                    class="ulink"
-                    href="https://github.com/tycho-brahe-platform/annotald"
-                    target="_top"
-                    >Annotald's website</a
-                  >
-                  on GitHub. This will put you in touch with Annotald's
-                  developers, who will help you solve the problem. When creating
-                  issue reports, please try to describe your computer's
-                  configuration and the error message you received in terms that
-                  are as accurate and concise as possible.
+        <div class="section">
+          <div class="titlepage">
+            <h3 class="title">
+              <a id="_using_docker"></a>2.4. Using Docker (alternative)
+            </h3>
+          </div>
+          <p>
+            Alternatively, you can use Docker commands instead of specific
+            operational systems scripts. These are the instructions:
+          </p>
+          <div class="orderedlist">
+            <ol class="orderedlist" type="1">
+              <li class="listitem">
+                Download and install the latest stable version of
+                <a
+                  class="ulink"
+                  href="https://www.docker.com/products/docker-desktop/"
+                  target="_top"
+                  >Docker Desktop</a
+                >
+                for your system.
+              </li>
+              <li class="listitem">
+                <p class="simpara">Install the Docker Annotald's image</p>
+                <pre class="screen">docker pull tychobrahe/annotald</pre>
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  Run the image replacing $folder by the folder where the PSD
+                  file is located and $filename by the name of the PSD file.
                 </p>
-              </td>
-            </tr>
-          </table>
+                <pre class="screen">
+docker run --rm --name annotald -p 8080:8080 -v "$folder":/data tychobrahe/annotald python bin/annotald /data/"$filename"</pre
+                >
+              </li>
+              <li class="listitem">
+                <p class="simpara">
+                  Open the following url in your web browser.
+                </p>
+                <pre class="screen">http://localhost:8080</pre>
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
       <div class="section">

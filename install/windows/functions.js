@@ -19,7 +19,7 @@ function search() {
 
   var parts = splitFilePath(psd);
   var cmd =
-    'docker run -it --rm --name annotald -p 8080:8080 -v ' +
+    'docker run --rm --name annotald -p 8080:8080 -v ' +
     parts[0] +
     ':/data tychobrahe/annotald python bin/annotald /data/' +
     parts[1];
