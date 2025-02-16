@@ -375,3 +375,8 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.error {
+  white-space: pre-wrap;
+  font-family: monospace;
+}

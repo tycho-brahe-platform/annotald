@@ -313,8 +313,14 @@ class Treedraw(object):
             tree = tree.replace("<", "&lt;")
             tree = tree.replace(">", "&gt;")
             if not tree == "":
-                nltk_tree = T.Tree(tree)
-                alltrees = alltrees + self.conversionFn(nltk_tree, version)
+                try:
+                    nltk_tree = T.Tree(tree)
+                    alltrees = alltrees + self.conversionFn(nltk_tree, version)
+                except Exception as e:
+                    error_msg = "Error processing tree: {}\nException: {}".format(tree, str(e))
+                    print(error_msg)
+                    traceback.print_exc()
+                    return '<div class="error">' + error_msg + '</div>'
 
         alltrees = alltrees + '</div>'
         return alltrees
